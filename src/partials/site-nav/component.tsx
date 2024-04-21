@@ -19,10 +19,9 @@ const Component : React.FC = () => (
 	<nav className="site-nav">
 		<Anchor to="/">Introduction</Anchor>
 		<Anchor className="group-link" to="/getting-started">Getting Started</Anchor>
-		<AnchorIndent1 to="/getting-started#create-context-usage">Creating context</AnchorIndent1>
-		<AnchorIndent1 to="/getting-started#provider-usage">Setting up the Provider</AnchorIndent1>
-		<AnchorIndent1 to="/getting-started#connect-usage">Consuming context { '(' }hoc method{ ')' }</AnchorIndent1>
-		<AnchorIndent1 to="/getting-started#usecontext-usage">Consuming context { '(' }hook with memo method{ ')' }</AnchorIndent1>
+		<AnchorIndent1 to="/getting-started#instantiate">Creating Instance</AnchorIndent1>
+		<AnchorIndent1 to="/getting-started#using">Using the Instance</AnchorIndent1>
+		<AnchorIndent1 to="/getting-started#sharing">Sharing the Instance</AnchorIndent1>
 		<Anchor to="/external-access">External Access</Anchor>
 		<Anchor className="group-link" to="/api">API</Anchor>
 		<AnchorIndent1 to="/api#connect">Connect HoC</AnchorIndent1>

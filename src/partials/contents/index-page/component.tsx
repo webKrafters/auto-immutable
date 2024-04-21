@@ -1,5 +1,3 @@
-import type { HeadFC, PageProps } from 'gatsby';
-
 import React from 'react';
 
 import { Button } from 'antd';
@@ -13,7 +11,7 @@ import Anchor from '../../../partials/anchor';
 
 import './style.scss';
 
-const IndexPage: React.FC<PageProps> = () => (
+const IndexPage: React.FC = () => (
   <article className="index-page">
     <div className="hero">
       <StaticImage
@@ -23,7 +21,7 @@ const IndexPage: React.FC<PageProps> = () => (
       />
     </div>
     <div className="cta">
-      <Anchor to="/getting-started">
+      <Anchor to="/quick-start">
         <Button>
           <RocketFilledIcon />
           <span>Quick Start</span>

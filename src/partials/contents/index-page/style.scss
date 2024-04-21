@@ -1,0 +1,25 @@
+.index-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > * {
+        display: inherit;
+        gap: 0 2rem;
+        justify-content: space-evenly;
+        padding: 2.5rem 0 0;
+        &.cta { margin: 2rem 0 }
+    }
+    .hero > .image { max-width: 32rem }
+    .cta button {
+        align-items: center;
+        border: none;
+        cursor: inherit;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 1.5rem;
+        gap: 0.5rem 1rem;
+        justify-content: center;
+        span { display: block }
+    }
+}

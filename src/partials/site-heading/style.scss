@@ -1,0 +1,95 @@
+:root { --shbg: var( --skye ) }
+.dark { --shbg: var( --midnight ) }
+.site-heading {
+    background: var( --shbg );
+    border-bottom: 1px solid;
+    border-color: var( --border-color );
+    > :last-child {
+        justify-content: end;
+        padding-right: 0.5rem;
+        text-align: right;
+    }
+    > .site-tags {
+        @media ( max-width: 835px ) {
+            display: none;
+        }
+    }
+    &, & > :not( .sider-toggle-btn ) {
+        align-items: center;
+        display: flex;
+    }
+    &, & > .site-tags { column-gap: 0.5rem }
+    .sider-toggle-btn {
+        background: var( --charcoal );
+        border: none;
+        border-right: 2px solid var( --blue );
+        color: var( --white );
+        display: block;
+        @media ( min-width: 992px ) { 
+            display: none;
+        }
+    }
+    .sider-toggle-btn,
+    .branding,
+    .logo,
+    .pkg-title {
+        height: var( --top-height );
+    }
+    .branding {
+        padding: 0 1.25rem;
+        width: 32rem;
+    }
+    .logo {
+        height: calc( var( --top-height ) - 0.75rem );
+        transform: rotateZ( 45deg );
+        width: 2rem;
+        &-link {
+            box-sizing: content-box;
+            height: calc( var( --top-height ) - 1rem );
+            padding-left: 0.5rem;
+            width: 2.75rem;
+        }
+    }
+    .pkg-title {
+        border-bottom: 2px solid;
+        color: var( --yellow );
+        font-size: 1.8333rem;
+        height: auto;
+        padding: 0 1rem;
+        white-space: nowrap;
+        &:hover { opacity: 0.75 }
+        > a {
+            color: inherit;
+            font-family: cursive;
+            font-weight: 900;
+            font-variant: normal;
+        }
+    }
+    // .text {
+    //     align-items: center;
+    //     display: flex;
+    //     flex-wrap: nowrap;
+    //     justify-content: center;
+    //     width: 23rem;
+    //     @media ( max-width: 524px ) {
+    //         justify-content: flex-start;
+    //         padding-left: 1.5rem;
+    //     }
+    //     > :first-child {
+    //         font-size: 1.45rem;
+    //         font-weight: 800;
+    //         padding-right: 0.5rem;
+    //         > a { color: var( --yellow ) }
+    //     }
+    //     > :last-child {
+    //         border-left: 0.25rem solid var( --blue );
+    //         font-weight: 300;
+    //         padding-left: 0.5rem;
+    //         @media ( max-width: 524px ) {
+    //             display: none;
+    //         }
+    //         > a { color: var( --blue ) }
+    //     }
+    // }
+    .dark-mode-settings { margin-left: 2rem }
+}

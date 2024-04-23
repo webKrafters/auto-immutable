@@ -1,12 +1,12 @@
 import type { GatsbyBrowser } from 'gatsby';
 
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
 
-import { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
+import metadata, { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
 
-import PageProvider, { UpdaterCtx } from './src/page-context';
+import PageProvider, { UpdaterCtx as PageCtxUpdater } from './src/page-context';
 
-import DarkmodeProvider from './src/partials/dark-mode-settings/context';
+import DarkmodeProvider, { ValueCtx as DarkmodeValueCtx } from './src/partials/dark-mode-settings/context';
 
 import Layout from './src/partials/layouts/index';
 
@@ -17,8 +17,14 @@ import Layout from './src/partials/layouts/index';
 // }
 
 export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, props }) => {
-    const update = useContext( UpdaterCtx );
-    useEffect(() => update( s => ({
+    const updatePageCtx = useContext( PageCtxUpdater );
+    const darkmode = useContext( DarkmodeValueCtx );
+    useLayoutEffect(() => {
+        document.querySelector( 'body' )?.classList[
+            darkmode ? 'add' : 'remove'
+        ]( 'dark' );
+    }, [ darkmode ]);
+    useEffect(() => updatePageCtx( s => ({
         ...s,
         ...props,
         isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
@@ -28,7 +34,11 @@ export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, pr
 
 export const wrapRootElement : GatsbyBrowser["wrapRootElement"] = ({ element }) => (
     <PageProvider>
-        <DarkmodeProvider>
+        <DarkmodeProvider initValue={
+            window.localStorage?.getItem( metadata.darkmode.key ) !== 'false'
+                ? metadata.darkmode.defaultValue
+                : false
+        }>
             { element }
         </DarkmodeProvider>
     </PageProvider>

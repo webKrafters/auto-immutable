@@ -19,14 +19,16 @@ const selectCurrentIcon = ( isDarkMode: boolean, reverseIcon: boolean ) => isDar
 
 const Component = forwardRef<HTMLElement, Props>(({ reverseIcon = false }, ref ) => {
 
-    const { site: { siteMetadata: {
-        darkmodeKey: DARKMODE_LOCALSTORAGE_KEY
-    } } } = useStaticQuery(
+    const { site: { siteMetadata: { darkmode: {
+        key: DARKMODE_LOCALSTORAGE_KEY
+    } } } } = useStaticQuery(
         graphql`
             query DarkmodeInfo {
                 site {
                     siteMetadata {
-                        darkmodeKey
+                        darkmode {
+                            key
+                        }
                     }
                 }
             }

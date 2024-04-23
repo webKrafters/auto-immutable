@@ -6,7 +6,10 @@ export default {
     _24Hours: 8.64e7,
     contact: pkgJson.author.email,
     copyright: 'This website is a copyright of webKrafters Inc. 2024-Present',
-    darkmodeKey: 'DKM',
+    darkmode: {
+        defaultValue: true,
+        key: 'DKM'
+    },
     description: pkgJson.description,
     device: {
         backgroundColor: '#fffaf6',

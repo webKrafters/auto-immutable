@@ -5,6 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Anchor from '../../anchor';
 import CodeBlock from '../../code-block';
 
+import './style.scss';
+
 const IntroPage: React.FC<{ className: string }> = ({ className }) => {
 	const { site: { siteMetadata: {
 		title,
@@ -60,7 +62,7 @@ const IntroPage: React.FC<{ className: string }> = ({ className }) => {
 					<Anchor to={ demoUrl }>Code Sandbox</Anchor>
 				</label>
 			</div>
-			<div>
+			<div className="para">
 				<label>
 					<strong>License: </strong>
 					<span>MIT</span>

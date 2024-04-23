@@ -62,8 +62,8 @@ const Header : React.FC<{
 
 Header.displayName = 'StartPage.Header';
 
-const StartPage : React.FC = () => (
-    <article className="start-page">
+const StartPage : React.FC<{className? : string}> = ({ className }) => (
+    <article className={ `start-page${ className ? ` ${ className }` : '' }` }>
         <div className="snippet-intro">
             Begin by installing <strong>Auto Immutable</strong>.
         </div>

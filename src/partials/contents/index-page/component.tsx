@@ -31,9 +31,9 @@ const Tile : React.FC<{
 );
 Tile.displayName = 'IndexPage.Tile';
 
-const IndexPage: React.FC = () => (
+const IndexPage: React.FC<{className : string}> = ({ className }) => (
   <>
-    <article className="index-page">
+    <article className={ `index-page ${ className }` }>
       <div className="hero">
         <StaticImage
           alt="wrier hero"

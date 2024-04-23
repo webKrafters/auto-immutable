@@ -13,8 +13,8 @@ const ctaStyle = {
     justifyContent: 'flex-end'
 };
 
-const QuickStartPage : React.FC = () => (
-    <article className="quick-start-page">
+const QuickStartPage : React.FC<{className : string}> = ({ className }) => (
+    <article className={ `quick-start-page ${ className }` }>
         <h1>Quick Start</h1>
         <StartPage />
         <div style={ ctaStyle }>

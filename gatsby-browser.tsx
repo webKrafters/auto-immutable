@@ -1,6 +1,6 @@
 import type { GatsbyBrowser } from 'gatsby';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
 
@@ -17,11 +17,12 @@ import Layout from './src/partials/layouts/index';
 // }
 
 export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, props }) => {
-    useContext( UpdaterCtx )( s => ({
+    const update = useContext( UpdaterCtx );
+    useEffect(() => update( s => ({
         ...s,
         ...props,
         isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
-    }) );
+    }) ), [ props ]);
     return ( <Layout { ...props }>{ element }</Layout> );
 };
 

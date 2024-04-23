@@ -2,7 +2,7 @@ import React, { Children, createContext, useState } from 'react';
 
 export interface Props { children?: React.ReactNode };
 
-export const UpdateCtx = createContext<(isDarkMode : boolean)=>void>( () => {} );
+export const UpdateCtx = createContext<React.Dispatch<React.SetStateAction<boolean>>>(()=>{});
 export const ValueCtx = createContext<boolean|undefined>( undefined );
 
 const Provider : React.FC<Props> = ({ children }) => {

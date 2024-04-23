@@ -81,9 +81,9 @@ const Component : React.FC<Props> = props => {
       </div>
       <div>
         <SiteTags />
-        <Anchor to="/intro">Welcome</Anchor>
-        <Anchor to="/#relations">Why now?</Anchor>
-        <Anchor to="/quick-start">Quick Start</Anchor>
+        <Anchor className="link-0" to="/intro">Welcome</Anchor>
+        <Anchor className="link-1" to="/#relations">Why now?</Anchor>
+        <Anchor className="link-2" to="/quick-start">Quick Start</Anchor>
         <DarkModeSetting />
       </div>
     </header>

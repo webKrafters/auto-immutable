@@ -1,6 +1,6 @@
 import type { GatsbySSR } from 'gatsby';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import metadata, { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
 
@@ -11,11 +11,12 @@ import DarkmodeProvider from './src/partials/dark-mode-settings/context';
 import Layout from './src/partials/layouts/index';
 
 export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => {
-    useContext( UpdaterCtx )( s => ({
+    const update = useContext( UpdaterCtx );
+    useEffect(() => update( s => ({
         ...s,
         ...props,
         isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
-    }) );
+    }) ), [ props ]);
     return ( <Layout { ...props }>{ element }</Layout> );
 };
 

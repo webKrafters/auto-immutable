@@ -4,6 +4,7 @@ import React, {
     useContext,
     useEffect,
     useLayoutEffect,
+    useMemo,
     useRef,
     useState
 } from 'react';
@@ -46,12 +47,28 @@ const Sider : React.ForwardRefExoticComponent<
 
 Sider.displayName = 'Site.Body.Sider';
 
-const NoSider : React.FC<Pick<Props, 'children'>> = ({ children }) => (
-    <main>
-        <SiteTags />
-        { Children.map( children, c => c ) }
-    </main>
-);
+const NoSider : React.FC<Pick<Props, 'children'>> = ({ children }) => {
+    const page = useMemo(() => Children.map(
+        children as React.ReactHTMLElement<any>,
+        c => {
+            try {
+                return React.cloneElement( c, {
+                    className: `page-main${
+                        c.props.className?.length
+                            ? ` ${ c.props.className }`
+                            : ''
+                    }`
+                } );
+            } catch( e ) { return c }
+        }
+    ), [ children ]);
+    return (
+        <main>
+            <SiteTags />
+            { page }
+        </main>
+    );
+};
 NoSider.displayName = 'Site.Body.NoSider';
 
 const WithSider : React.FC<Props> = ({

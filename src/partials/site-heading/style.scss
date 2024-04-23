@@ -5,9 +5,18 @@
     border-bottom: 1px solid;
     border-color: var( --border-color );
     > :last-child {
-        justify-content: end;
+        color: var( --color );
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
         padding-right: 0.5rem;
-        text-align: right;
+        a {
+            color: var( --color );
+            a:hover {
+                opacity: 0.8;
+            }
+        }
     }
     > .site-tags {
         @media ( max-width: 835px ) {
@@ -52,7 +61,7 @@
     }
     .pkg-title {
         border-bottom: 2px solid;
-        color: var( --yellow );
+        color: var( --pink );
         font-size: 1.8333rem;
         height: auto;
         padding: 0 1rem;
@@ -91,5 +100,4 @@
     //         > a { color: var( --blue ) }
     //     }
     // }
-    .dark-mode-settings { margin-left: 2rem }
 }

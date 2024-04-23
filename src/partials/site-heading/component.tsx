@@ -42,9 +42,8 @@ const SiderToggleable : React.FC<Props> = ({ isSiderCollapsed, onToggleSider }) 
 
 const Component : React.FC<Props> = props => { 
   const { site: { siteMetadata: {
-    title, url: {
-      demo: demoUrl,
-      npm: npmUrl,
+    title,
+    url: {
       repo: repoUrl
     }
   } } } = useStaticQuery(
@@ -54,8 +53,6 @@ const Component : React.FC<Props> = props => {
                 siteMetadata {
                     title,
                     url {
-                        demo,
-                        npm,
                         repo
                     }
                 }
@@ -82,8 +79,13 @@ const Component : React.FC<Props> = props => {
           />
         </Anchor>
       </div>
-      <SiteTags />
-      <DarkModeSetting />
+      <div>
+        <SiteTags />
+        <Anchor to="/intro">Welcome</Anchor>
+        <Anchor to="/#relations">Why now?</Anchor>
+        <Anchor to="/quick-start">Quick Start</Anchor>
+        <DarkModeSetting />
+      </div>
     </header>
   );
 };

@@ -5,10 +5,12 @@
     --charcoal: #444;
     --gray: #888;
     --midnight: #22222f;
+    --pink: #fc084d;
     --skye: #f0faff;
     --white: #fff;
     --yellow: #da4;
     --background-color: var( --white );
+    --background-color-mild: #f7f7f7;
     --border-color: var( --ash );
     --color: var( --blackie );
     --top-height: 5rem;
@@ -16,6 +18,7 @@
 
 .dark {
     --background-color: var( --blackie );
+    --background-color-mild: #272727;
     --border-color: var( --charcoal );
     --color: var( --white );
 }
@@ -52,18 +55,3 @@ body {
 .vertical-top { vertical-align: top }
 
 .top-barred { border-top: 1px solid var( --border-color ) }
-
-.index-route .installation { margin: 2rem 0 3rem }
-.index-route .installation > * {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-.index-route .installation header {
-    font-variant: small-caps;
-    font-weight: 600;
-    text-decoration: underline;
-}
-.index-route .installation strong {
-    margin-right: 0.5rem;
-    color: var( --blue );
-}

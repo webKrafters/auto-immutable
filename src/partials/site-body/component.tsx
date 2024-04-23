@@ -47,15 +47,10 @@ const Sider : React.ForwardRefExoticComponent<
 Sider.displayName = 'Site.Body.Sider';
 
 const NoSider : React.FC<Pick<Props, 'children'>> = ({ children }) => (
-    <> 
-        <main>
-            <SiteTags />
-            <>
-                { Children.map( children, c => c ) }
-            </>
-        </main>
-        <SiteFaqs />
-    </>
+    <main>
+        <SiteTags />
+        { Children.map( children, c => c ) }
+    </main>
 );
 NoSider.displayName = 'Site.Body.NoSider';
 
@@ -92,6 +87,7 @@ const WithSider : React.FC<Props> = ({
         <>
             <Sider isCollapsible={ !( isSiderCollapsed ?? isHandheld ) } ref={ siderRef } />
             <NoSider>{ children }</NoSider>
+            <SiteFaqs />
         </>
     );
 };

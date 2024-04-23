@@ -23,7 +23,7 @@ const Component = forwardRef<HTMLElement, Props>(({ reverseIcon = false }, ref )
         darkmodeKey: DARKMODE_LOCALSTORAGE_KEY
     } } } = useStaticQuery(
         graphql`
-            query SiteInfo {
+            query DarkmodeInfo {
                 site {
                     siteMetadata {
                         darkmodeKey

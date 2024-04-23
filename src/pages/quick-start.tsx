@@ -18,7 +18,7 @@ const QuickStartPage : React.FC = () => (
         <h1>Quick Start</h1>
         <StartPage />
         <div style={ ctaStyle }>
-            <Anchor to="./intro">
+            <Anchor to="/intro">
                 See complete documentation.
             </Anchor>
         </div>

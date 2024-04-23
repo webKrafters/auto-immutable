@@ -17,11 +17,12 @@ const AnchorIndent4 = createIndentedAnchor( 4 );
 
 const Component : React.FC = () => (
 	<nav className="site-nav">
-		<Anchor to="/">Introduction</Anchor>
+		<Anchor to="/intro">Introduction</Anchor>
 		<Anchor className="group-link" to="/getting-started">Getting Started</Anchor>
 		<AnchorIndent1 to="/getting-started#instantiate">Creating Instance</AnchorIndent1>
 		<AnchorIndent1 to="/getting-started#using">Using the Instance</AnchorIndent1>
 		<AnchorIndent1 to="/getting-started#sharing">Sharing the Instance</AnchorIndent1>
+		
 		<Anchor to="/external-access">External Access</Anchor>
 		<Anchor className="group-link" to="/api">API</Anchor>
 		<AnchorIndent1 to="/api#connect">Connect HoC</AnchorIndent1>

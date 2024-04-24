@@ -9,6 +9,7 @@
     .indent1 { padding-left: 1rem }
     .indent2 { padding-left: 3rem }
     .indent3 { padding-left: 5rem }
+    .indent4 { padding-left: 7rem }
     .group-link {
         border-bottom: 1px solid;
         border-color: var( --border-color );
@@ -19,6 +20,7 @@
         &.indent1 { padding-left: 2rem }
         &.indent2 { padding-left: 4rem }
         &.indent3 { padding-left: 6rem }
+        &.indent4 { padding-left: 8rem }
     }
     a:hover { color: var( --bold-color ) }
     a.group-link:hover { color: var( --blue ) }

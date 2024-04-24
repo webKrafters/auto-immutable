@@ -23,12 +23,14 @@ const Component : React.FC = () => (
 		<AnchorIndent1 to="/getting-started#using">Using the Instance</AnchorIndent1>
 		<AnchorIndent1 to="/getting-started#sharing">Sharing the Instance</AnchorIndent1>
 		<Anchor className="group-link" to="/api">API</Anchor>
-		<AnchorIndent1 to="/api#provider">AutoImmutable Instance</AnchorIndent1>
-		<AnchorIndent1 to="/api#connection">Connection Function</AnchorIndent1>
-		<AnchorIndent2 to="/api/method/get">Consuming Data</AnchorIndent2>
-		<AnchorIndent2 to="/api/method/set">Updating Data</AnchorIndent2>
-		<AnchorIndent3 to="/api/method/set/array-index">Handling Array Indexing</AnchorIndent3>
-		<AnchorIndent2 to="/api/method/disconnect">Disconnect from Source</AnchorIndent2>
+		<AnchorIndent1 to="/api#source">AutoImmutable Instance</AnchorIndent1>
+		<AnchorIndent1 to="/api#consumer">Interacting with Instance</AnchorIndent1>
+		<AnchorIndent2 to="/api/method/get">Accessing Immutable Data</AnchorIndent2>
+		<AnchorIndent3 to="/api/method/get/property-path">Specific Data Items</AnchorIndent3>
+		<AnchorIndent2 to="/api/method/set">Updating Immutable Data</AnchorIndent2>
+		<AnchorIndent3 to="/api/method/set/array">Working with Arrays</AnchorIndent3>
+		<AnchorIndent4 to="/api/method/set/array/indexing">Handling Array Indexing</AnchorIndent4>
+		<AnchorIndent2 to="/api/method/disconnect">Disconnecting from Instance</AnchorIndent2>
 		
 		<Anchor className="group-link" to="/concepts">Concepts</Anchor>
 		<AnchorIndent1 to="/concepts/client">Client</AnchorIndent1>

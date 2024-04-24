@@ -11,8 +11,7 @@ const ProtectedData : {} = {};
 
 const aImmutable = new AutoImmutable( ProtectedData ); // creates an AutoImmutable instance bearing the ProtectedData
 
-aImmutable.connect(); // returns a consumer for this Immutable instance
-`;
+aImmutable.connect(); // returns a consumer for this Immutable instance`;
 
 const CONNECTION_SAMPLE =
 `import AutoImmutable from 'auto-immutable';
@@ -87,25 +86,24 @@ consumer1.get( 'a.b.d', 'a.x' );
 //    'a.x': 99
 // }
 
-console.log( consumer.disconnected ); // prints \`false\`
-`;
+console.log( consumer.disconnected ); // prints \`false\``;
 
 const ApiPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `api-page ${ className }` }>
         <h1>API</h1>
-        <div>
-            <h3>Immutable Instance</h3>
+        <div id="source">
+            <h3>AutoImmutable Instance</h3>
             <ul>
-                <li>is an object holding the immutable data.</li>
+                <li>is a source object holding the immutable data.</li>
                 <li>provides access to the underlying data through its <code>connect(...)</code> method.</li>
             </ul>
             <CodeBlock>{ INSTANCE_SAMPLE }</CodeBlock>
         </div>
-        <div id="connection">
+        <div id="consumer">
             <h3>Connection Instance</h3>
             <ul>
-                <li>is a consumer for an <code>Auto-Imutable</code> instance.</li>
-                <li>exposes <Anchor to="/api/method/get"><code>get(...)</code></Anchor>, <Anchor to="/api/method/set"><code>set(...)</code></Anchor> and <Anchor to="/api/method/disconnect"><code>disconnect(...)</code></Anchor> methods.</li>
+                <li>is a consumer for an <code>AutoImmutable</code> instance.</li>
+                <li>exposes <Anchor to="/api/method/get"><code>get(...)</code></Anchor>, <Anchor to="/api/method/set"><code>set(...)</code></Anchor> and <Anchor to="/api/method/disconnect"><code>disconnect(...)</code></Anchor> methods for interaction with its AutoImmutable instance.</li>
             </ul>
             <CodeBlock>{ CONNECTION_SAMPLE }</CodeBlock>
         </div>

@@ -22,13 +22,14 @@ const Component : React.FC = () => (
 		<AnchorIndent1 to="/getting-started#instantiate">Creating Instance</AnchorIndent1>
 		<AnchorIndent1 to="/getting-started#using">Using the Instance</AnchorIndent1>
 		<AnchorIndent1 to="/getting-started#sharing">Sharing the Instance</AnchorIndent1>
-		
-		<Anchor to="/external-access">External Access</Anchor>
 		<Anchor className="group-link" to="/api">API</Anchor>
-		<AnchorIndent1 to="/api#connect">Connect HoC</AnchorIndent1>
-		<AnchorIndent1 to="/api#create-context">CreateContext Function</AnchorIndent1>
-		<AnchorIndent1 to="/api#usage-error">UsageError Exception</AnchorIndent1>
-		<AnchorIndent1 to="/api#usecontext">UseContext Hook</AnchorIndent1>
+		<AnchorIndent1 to="/api#provider">AutoImmutable Instance</AnchorIndent1>
+		<AnchorIndent1 to="/api#connection">Connection Function</AnchorIndent1>
+		<AnchorIndent2 to="/api/method/get">Consuming Data</AnchorIndent2>
+		<AnchorIndent2 to="/api/method/set">Updating Data</AnchorIndent2>
+		<AnchorIndent3 to="/api/method/set/array-index">Handling Array Indexing</AnchorIndent3>
+		<AnchorIndent2 to="/api/method/disconnect">Disconnect from Source</AnchorIndent2>
+		
 		<Anchor className="group-link" to="/concepts">Concepts</Anchor>
 		<AnchorIndent1 to="/concepts/client">Client</AnchorIndent1>
 		<AnchorIndent1 to="/concepts/prehooks">Prehooks</AnchorIndent1>

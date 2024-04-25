@@ -28,8 +28,8 @@ const Component : React.FC = () => (
 		<AnchorIndent2 to="/api/method/get">Accessing Immutable Data</AnchorIndent2>
 		<AnchorIndent3 to="/api/method/get/property-path">Specific Data Items</AnchorIndent3>
 		<AnchorIndent2 to="/api/method/set">Updating Immutable Data</AnchorIndent2>
-		<AnchorIndent3 to="/api/method/set/array">Working with Arrays</AnchorIndent3>
-		<AnchorIndent4 to="/api/method/set/array/indexing">Handling Array Indexing</AnchorIndent4>
+		<AnchorIndent3 to="/api/method/set/overview">Detailed Overview</AnchorIndent3>
+		<AnchorIndent3 to="/api/method/set/overview#indexing">Working with Arrays</AnchorIndent3>
 		<AnchorIndent2 to="/api/method/disconnect">Disconnecting from Instance</AnchorIndent2>
 		
 		<Anchor className="group-link" to="/concepts">Concepts</Anchor>

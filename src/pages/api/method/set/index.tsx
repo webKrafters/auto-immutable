@@ -67,7 +67,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
         <p>
             The <code>set(...)</code> method accepts <strong>2</strong> arguments - namely:
             <ol>
-                <li><strong><code>changes</code>:</strong> an object payload containing data nodes to add and/or merge into the AutoImmutable instance data along with operations to perform at specific existing data nodes.</li>
+                <li><strong><code>changes</code>:</strong> a single object payload or an array of object payloads containing data nodes to add and/or merge into the AutoImmutable instance data along with operations to perform at specific existing data nodes.</li>
                 <li><strong><code>onComplete</code>:</strong> an optional callback function to be called at the completion of the update operation. This callback is invoked with the <code>changes</code> payload object.</li>
             </ol>
             The <code>set(...)</code> method will create new property pathways into the AutoImmutable instance data for new properties found in <code>changes</code> payload object.
@@ -95,19 +95,8 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
                 Updating Immutable Arrays:
                 <br />
                 <strong>
-                    <Anchor to="/api/method/set/array">
-                        { location?.origin }/api/method/set/array
-                    </Anchor>
-                </strong>
-            </label>
-        </p>
-        <p>
-            <label>
-                Updating At Immutable Array At Specific Index:
-                <br />
-                <strong>
-                    <Anchor to="/api/method/set/array/indexing">
-                        { location?.origin }/api/method/set/array/indexing
+                    <Anchor to="/api/method/set/overview#indexing">
+                        { location?.origin }/api/method/set/overview#indexing
                     </Anchor>
                 </strong>
             </label>

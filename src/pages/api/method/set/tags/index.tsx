@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Alert from '../../../../partials/alert';
-import Anchor from '../../../../partials/anchor';
-import CodeBlock from '../../../../partials/code-block';
+import Alert from '../../../../../partials/alert';
+import Anchor from '../../../../../partials/anchor';
+import CodeBlock from '../../../../../partials/code-block';
 
 const PROPER_BATCH_CALL =
 `import AutoImmutable from 'auto-immutable';

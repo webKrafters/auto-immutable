@@ -2,8 +2,6 @@ import type { ReactNode } from 'react';
 
 import React from 'react';
 
-import { Button } from 'antd';
-
 import AuditOutlinedIcon from '@ant-design/icons/AuditOutlined';
 import ClusterOutlinedIcon from '@ant-design/icons/ClusterOutlined';
 import OrderedListOutlinedIcon from '@ant-design/icons/OrderedListOutlined';
@@ -43,16 +41,12 @@ const IndexPage: React.FC<{className : string}> = ({ className }) => (
       </div>
       <div className="cta">
         <Anchor to="/quick-start">
-          <Button>
-            <RocketFilledIcon />
-            <span>Quick Start</span>
-          </Button>
+          <RocketFilledIcon />
+          <span>Quick Start</span>
         </Anchor>
         <Anchor to="/intro">
-          <Button>
-            <ProductFilledIcon />
-            <span>Documentation</span>
-          </Button>
+          <ProductFilledIcon />
+          <span>Documentation</span>
         </Anchor>
       </div>
     </article>

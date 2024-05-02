@@ -51,14 +51,15 @@ consumer.set({
         d: 80
     },
     j: 23
-})
+}, changes => console.log( changes ))
 // updates AutoImmutable instance data to: {
 //    a: {
 //        b: [ { x: 7, y: 73, z: 9 } ],
 //        d: 80
 //    },
 //    j: 23
-// };`
+// };
+// the second argument is invoked immediately following the update`
 
 const SET_ARRAY =
 `import AutoImmutable from 'auto-immutable';
@@ -99,6 +100,7 @@ const SetOverviewApiPage : React.FC<{className: string}> = ({ className }) => (
         <h1>Set Method Overiew</h1>
         <p>New updates are merged into AutoImmutable instance data by default.</p>
         <p>So only supply the exact changes to be merged <strong><i>{ '(' }i.e. do not spread changing properties into the current properties as is commonly done in pure functional development{ ')' }</i></strong>.</p>
+        <p>An optional <strong><code>onUpdateComplete</code></strong> callback may be provided as a second argument.</p>
         <p>And to overwrite/delete a slice of the AutoImmutable instance data, use any combinations of the <strong><Anchor to="/api/method/set/tags">tag</Anchor></strong> commands.</p>
         <strong>Example:</strong>
         <CodeBlock>{ BASIC }</CodeBlock>
@@ -114,8 +116,9 @@ const SetOverviewApiPage : React.FC<{className: string}> = ({ className }) => (
             </Alert>
         </div>
         <h3 id="batched-update">Batched Updates</h3>
-        <p>provides a way of updating AutoImmutable instance data as a transaction of several change payloads.</p>
-        <p>The list of change payloads are applied sequentially from <code>index 0</code> to the <code>last index</code>.</p>
+        <p>Auto Immutable JS provides a means for updating data as a transaction of several change payloads.</p>
+        <p>The list of change payloads are applied sequentially from <code>index 0</code> to the <code>final index</code>.</p>
+        <p>This capability is especially applicable when update operation using <strong><Anchor to="/api/method/set/tags">tag</Anchor></strong> commands depends on previous outcomes.</p>
         <CodeBlock>{ PROPER_BATCH_CALL }</CodeBlock>
     </article>
 );

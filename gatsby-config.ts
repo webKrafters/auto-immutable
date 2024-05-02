@@ -11,6 +11,7 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
+    'gatsby-plugin-antd',
     'gatsby-plugin-sitemap',
     {
       options: {

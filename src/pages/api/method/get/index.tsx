@@ -34,9 +34,9 @@ consumer.get( 'a.c[1]', 'b' );
 const GetMethodApiPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `get-method-api-page ${ className }` }>
         <h1>Accessing Immutable Data</h1>
-        <p>Any AutoImmutable instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection</code></Anchor> class instances.</p>
+        <p>Any AutoImmutable instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</p>
         <p>The <code>get(...)</code> method of the <code>Connection</code> instance provides the means of accessing and obtaining Immutable data.</p>
-        <p>The <code>get(...)</code> method is variadic accepting only <strong><Anchor to="/api/method/get/property-path">property path</Anchor> argument(s)</strong>.</p>
+        <p>This method is variadic accepting only <strong><Anchor to="/api/method/get/property-path">property path</Anchor> argument(s)</strong>.</p>
         <Alert title="Pro tip:">
             <p>The data returned from this method is a snapshot of the AutoImmutable instance data at the time of access.</p>
             <p>This snapshot data is not affected by further updates to the AutoImmutable instance data.</p>

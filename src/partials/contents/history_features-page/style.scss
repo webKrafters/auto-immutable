@@ -1,0 +1,19 @@
+.features-history-page {
+    table {
+        border-spacing: 0 1rem;
+        tbody {
+            border-bottom: 1px solid var( --border-color );
+            padding-bottom: 1rem;
+            &:last-of-type {
+                border-bottom: 4px double var( --border-color );
+            }
+            td {
+                border-bottom: 1px dashed var( --border-color );
+                padding: 0.5rem 1rem;
+                &:not( :last-child ) {
+                    border-right: 1px solid var( --border-color );
+                }
+            }
+        }
+    }
+}

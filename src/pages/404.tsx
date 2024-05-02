@@ -1,49 +1,101 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import type { HeadFC } from 'gatsby';
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import React, { useCallback, useMemo } from 'react';
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import { navigate } from 'gatsby';
 
-const NotFoundPage: React.FC<PageProps> = () => {
+import { StaticImage } from 'gatsby-plugin-image';
+
+import { Button } from 'antd';
+
+import LeftOutlinedIcon from '@ant-design/icons/LeftOutlined';
+
+import Anchor from '../partials/anchor';
+
+const styles : {[x:string]: React.CSSProperties} = {
+  heading: { height: 50 },
+  image: {
+    border: '2px solid #fed',
+    height: '16rem',
+    width: '16rem'
+  },
+  imageCredits: {
+    display: 'inline-block',
+    fontSize: '0.75rem'
+  },
+  main: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: '1rem'
+  },
+  message: { fontSize: '1.01rem' },
+  navBack: { marginTop: '4rem' },
+  navBackIcon: { fontWeight: '700' },
+  navHomeIcon: { fontWeight: '800' },
+  page: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+};
+
+const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
+  const backIconEl = useMemo(() => ( <LeftOutlinedIcon /> ), []);
+  const goBack = useCallback(() => navigate( -1 ), []);
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <article
+      className={ `not-found-page ${ className }` }
+      style={ styles.page }
+    >
+        <h1 style={ styles.heading }>Page not found</h1>
+        <div style={ styles.main }>
+          <p style={ styles.message }>
+            Sorry 😔, we couldn’t find it for you.
+          </p>
+          <StaticImage
+            alt="basking red fox"
+            className="image"
+            src="../images/redd-foxx.jpg"
+            style={ styles.image }
+          />
+          <div style={ styles.imageCredits }>
+            { 'Photo by ' }
+            <Anchor
+              to="https://unsplash.com/@terra_gallery?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >
+              TERRA
+            </Anchor>
+            { ' on ' }
+            <Anchor
+              to="https://unsplash.com/photos/a-red-fox-sitting-on-top-of-a-snow-covered-slope-W5T76rDUbPs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >
+              Unsplash
+            </Anchor>
+          </div>
+          <p style={ styles.navBack }>
+            <Button
+              icon={ backIconEl }
+              onClick={ goBack }
+              style={ styles.navBackIcon }
+              type="primary"
+            >
+              Return to safety
+            </Button>
+          </p>
+          <p>
+            <Anchor
+              style={ styles.navHomeIcon }
+              to="/"
+            >
+              Go home
+            </Anchor>
+          </p>
+        </div>
+    </article>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head : HeadFC = () => ( <title>Not found</title> );

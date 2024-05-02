@@ -4,8 +4,9 @@
     "name": "Stephen Isienyi"
   },
   "dependencies": {
-    "antd": "^4.24.15",
+    "antd": "^4.24.16",
     "gatsby": "^5.13.3",
+    "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-offline": "^6.13.2",

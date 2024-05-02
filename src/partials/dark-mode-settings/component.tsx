@@ -57,10 +57,10 @@ const Component = forwardRef<HTMLElement, Props>(({ reverseIcon = false }, ref )
         []
     );
 
-    const [ currentIcon, setCurrentIcon ] = useState(() => selectCurrentIcon( isDark, reverseIcon ));
+    const [ currentIconEl, setCurrentIconEl ] = useState(() => selectCurrentIcon( isDark, reverseIcon ));
     
     useEffect(() => {
-        setCurrentIcon( selectCurrentIcon( isDark, reverseIcon ) );
+        setCurrentIconEl( selectCurrentIcon( isDark, reverseIcon ) );
         updateDarkmodeCtx( isDark );
     }, [ isDark, reverseIcon ]);
 
@@ -73,7 +73,7 @@ const Component = forwardRef<HTMLElement, Props>(({ reverseIcon = false }, ref )
     return (
         <Button
             className="dark-mode-settings"
-            icon={ currentIcon }
+            icon={ currentIconEl }
             onClick={ onClick }
             ref={ ref }
             shape="circle"

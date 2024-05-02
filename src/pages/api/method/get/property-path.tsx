@@ -5,6 +5,8 @@ import metadata from '../../../../../gatsby-config/metadata';
 import Anchor from '../../../../partials/anchor';
 import CodeBlock from '../../../../partials/code-block';
 
+const isolatedTopStyle = { marginTop: '1rem' };
+
 const ILLUSTRATION =
 `{
     a: {
@@ -59,7 +61,9 @@ const PropertyPathApiPage : React.FC<{className: string}> = ({ className }) => (
                 <p>
                     <h3 id="property-path-example">Ex. Given the following object:</h3>
                     <CodeBlock>{ ILLUSTRATION }</CodeBlock>
-                    <p>The property path <code>a.c.e</code> accesses the <code>e=5</code> property.</p>
+                    <p style={ isolatedTopStyle }>
+                        The property path <code>a.c.e</code> accesses the <code>e=5</code> property.
+                    </p>
                     <p>Either of the property paths <code>a.c.f.1</code>, <code>a.c.f.-2</code>, <code>a.c.f[1]</code> and <code>a.c.f[-2]</code> is a valid property path to access the <code>[1]=2</code> property.</p>
                     <p>A special property path, <Anchor to="/api/method/get/property-path#global">@@GLOBAL</Anchor>, may be used to access the immutable data as a whole.</p>
                 </p>

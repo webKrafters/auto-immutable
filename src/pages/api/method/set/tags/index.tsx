@@ -1,123 +1,35 @@
 import React from 'react';
 
-import Alert from '../../../../../partials/alert';
-import Anchor from '../../../../../partials/anchor';
-import CodeBlock from '../../../../../partials/code-block';
+import Anchor, { Props as AnchorProps } from '../../../../../partials/anchor';
 
-const PROPER_BATCH_CALL =
-`import AutoImmutable from 'auto-immutable';
+const TagLink : React.FC<AnchorProps> = ({ to, ...props }) => (
+    <Anchor
+        style={{
+            fontStyle: 'italic',
+            fontWeight: 500,
+            marginRight: 6
+        }}
+        to={ `/api/method/set/tags/${ to }-usage` }
+        { ...props }
+    />
+);
 
-// Given the following immutable data:
-const protectedData = {
-    a: { b: [ { x: 7, y: 8, z: 9 } ] },
-    j: 10
-};
-
-const aImmutable = new AutoImmutable( protectedData );
-
-const consumer = aImmutable.connect();
-
-consumer.set([
-    {
-        a: { b: { 1: 22 },
-        c: 40
-    },
-    {
-        a: { b: { 0: { v: 8, w: 560, y: 110, z: 120 } } }
-    },
-]);
-// updates the AutoImmutable instance data to: {
-//     a: { b: [ { v: 8, w: 560, x: 7, y: 110, z: 120 }, 22 ] },
-//     c: 40,
-//     j: 10
-// };`
-
-const BASIC =
-`import AutoImmutable from 'auto-immutable';
-
-// Given the following immutable data:
-const protectedData = {
-    a: { b: [ { x: 7, y: 8, z: 9 } ] },
-    j: 10
-};
-
-const aImmutable = new AutoImmutable( protectedData );
-
-const consumer = aImmutable.connect();
-
-consumer.set({
-    a: {
-        b: { 0: { y: 73 } },
-        d: 80
-    },
-    j: 23
-})
-// updates AutoImmutable instance data to: {
-//    a: {
-//        b: [ { x: 7, y: 73, z: 9 } ],
-//        d: 80
-//    },
-//    j: 23
-// };`
-
-const SET_ARRAY =
-`import AutoImmutable from 'auto-immutable';
-
-// Given the following array bearing immutable data:
-const protectedData = {
-    a: { b: [ { x: 7, y: 8, z: 9 } ] },
-    j: 10
-};
-
-const aImmutable = new AutoImmutable( protectedData );
-
-const consumer = aImmutable.connect();
-
-// The following will override the existing array.
-consumer.set({ a: { b: [ { y: 30 }, 22 ] } });
-// updates the AutoImmutable instance data to: {
-//     a: { b: [ { y: 30 }, 22 ] },
-//     j: 10
-// };
-
-// The followinng will update the existing array at indexes.
-consumer.set({ a: { b: { 0: { y: 30 }, 1: 22 } } });
-// updates the AutoImmutable instance data to: {
-//     a: { b: [ { x: 7, y: 30, z: 9 }, 22 ] },
-//     j: 10
-// };
-
-// The followinng will update the existing array at indexes.
-consumer.set({ a: { b: { '-1': { y: 30 }, 1: 22 } } });
-// updates the AutoImmutable instance data to: {
-//     a: { b: [ { x: 7, y: 30, z: 9 }, 22 ] },
-//     j: 10
-// };`;
-
-const SetOverviewApiPage : React.FC<{className: string}> = ({ className }) => (
-    <article className={ `set-method-api-overiew-page ${ className }` }>
-        <h1>Set Method Overiew</h1>
-        <p>New updates are merged into AutoImmutable instance data by default.</p>
-        <p>So only supply the exact changes to be merged <strong><i>{ '(' }i.e. do not spread changing properties into the current properties as is commonly done in pure functional development{ ')' }</i></strong>.</p>
-        <p>And to overwrite/delete a slice of the AutoImmutable instance data, use any combinations of the <strong><Anchor to="/api/method/set/tags">tag</Anchor></strong> commands.</p>
-        <strong>Example:</strong>
-        <CodeBlock>{ BASIC }</CodeBlock>
-        <h3 id="indexing">Indexing</h3>
-        <p>Traditionally, AutoImmutable instance data properties of the Array type are updated by a new array replacement. This overwrites the current property.</p>
-        <p>Hence the need for <code>indexing</code>. Indexing provides a mechanism for updating array properties at specific indexes using an indexed change object property.</p>
-        <p>The store also recognizes and resolves negative indexes when present in the indexed change object. See additional <Anchor to="/api/method/set/overview#neg-idx-tip">tip</Anchor> below.</p>
-        <strong>Example:</strong>
-        <CodeBlock>{ SET_ARRAY }</CodeBlock>
-        <div id="neg-idx-tip">
-            <Alert style={{ margin: '2rem 0' }} title={ <strong><i>Tip:</i></strong> }>
-                Negative indexing pointing at an out-of-bounds index is ignored.
-            </Alert>
-        </div>
-        <h3 id="batched-update">Batched Updates</h3>
-        <p>provides a way of updating AutoImmutable instance data as a transaction of several change payloads.</p>
-        <p>The list of change payloads are applied sequentially from <code>index 0</code> to the <code>last index</code>.</p>
-        <CodeBlock>{ PROPER_BATCH_CALL }</CodeBlock>
+const SetMethodApiTagsPage : React.FC<{className: string}> = ({ className }) => (
+    <article className={ `set-method-api-tags-page ${ className }` }>
+        <h1>Set Method Tags Commands</h1>
+        <p>By default, the <strong><Anchor to="/api#consuer">consumer's</Anchor></strong> <code>set(...)</code> method recursively merges new changes into current state.</p>
+        <p>To overwrite current Immutable data slices with new values, <strong>7</strong> tag commands have been provided:
+            <ol>
+                <li><TagLink to="clear">@@CLEAR:</TagLink> sets property to its corresponding empty value</li>
+                <li><TagLink to="delete">@@DELETE:</TagLink> removes plain object properties and array items</li>
+                <li><TagLink to="move">@@MOVE:</TagLink> moves array elements</li>
+                <li><TagLink to="push">@@PUSH:</TagLink> pushes new items into an array</li>
+                <li><TagLink to="replace">@@REPLACE:</TagLink> replaces property values</li>
+                <li><TagLink to="set">@@SET:</TagLink> sets property values</li>
+                <li><TagLink to="splice">@@SPLICE:</TagLink> splices array items</li>
+            </ol>
+        </p>
     </article>
 );
 
-export default SetOverviewApiPage;
+export default SetMethodApiTagsPage;

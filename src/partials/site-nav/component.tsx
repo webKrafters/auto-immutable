@@ -30,30 +30,17 @@ const Component : React.FC = () => (
 		<AnchorIndent2 to="/api/method/set">Updating Immutable Data</AnchorIndent2>
 		<AnchorIndent3 to="/api/method/set/overview">Detailed Overview</AnchorIndent3>
 		<AnchorIndent3 to="/api/method/set/overview#indexing">Working with Arrays</AnchorIndent3>
+		<AnchorIndent3 to="/api/method/set/overview#batched-update">Batched Update</AnchorIndent3>
+		<AnchorIndent3 className="group-link" to="/api/method/set/tags">Using Tag Commands</AnchorIndent3>
+		<AnchorIndent4 to="/api/method/set/tags/clear-usage"><b>@@CLEAR</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/delete-usage"><b>@@DELETE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/move-usage"><b>@@MOVE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/push-usage"><b>@@PUSH</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/replace-usage"><b>@@REPLACE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/set-usage"><b>@@SET</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/splice-usage"><b>@@SPLICE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/api/method/set/tags/order-of-operations">Combination Usage Example</AnchorIndent4>
 		<AnchorIndent2 to="/api/method/disconnect">Disconnecting from Instance</AnchorIndent2>
-		
-		<Anchor className="group-link" to="/concepts">Concepts</Anchor>
-		<AnchorIndent1 to="/concepts/client">Client</AnchorIndent1>
-		<AnchorIndent1 to="/concepts/prehooks">Prehooks</AnchorIndent1>
-		<AnchorIndent1 className="group-link" to="/concepts/property-path">Property Path</AnchorIndent1>
-		<AnchorIndent2 to="/concepts/property-path#fullstate-selectorkey"><b>@@STATE</b></AnchorIndent2>
-		<AnchorIndent1 to="/concepts/provider">Provider</AnchorIndent1>
-		<AnchorIndent1 to="/concepts/selector-map">Selector Map</AnchorIndent1>
-		<AnchorIndent1 to="/concepts/storage">Storage</AnchorIndent1>
-		<AnchorIndent1 className="group-link" to="/concepts/store">Store</AnchorIndent1>
-		<AnchorIndent2 to="/concepts/store/resetstate">Reset State</AnchorIndent2>
-		<AnchorIndent2 className="group-link" to="/concepts/store/setstate">Set State</AnchorIndent2>
-		<AnchorIndent3 to="/concepts/store/setstate#batched-update">Batched Update</AnchorIndent3>
-		<AnchorIndent3 to="/concepts/store/setstate#indexing">Array Indexing</AnchorIndent3>
-		<AnchorIndent3 className="group-link" to="/concepts/store/setstate/tags">Using Tag Commands</AnchorIndent3>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/clear-usage"><b>@@CLEAR</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/delete-usage"><b>@@DELETE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/move-usage"><b>@@MOVE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/push-usage"><b>@@PUSH</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/replace-usage"><b>@@REPLACE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/set-usage"><b>@@SET</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/splice-usage"><b>@@SPLICE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/order-of-operations">Combination Usage Example</AnchorIndent4>
 		<Anchor className="group-link" to="/history/features">What's Changed?</Anchor>
 	</nav>
 );

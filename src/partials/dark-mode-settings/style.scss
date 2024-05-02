@@ -1,22 +1,31 @@
 .dark-mode-settings {
     align-items: center;
-    background: #ffffff0a;
-    border: 1px solid #ffffff0a;
+    border: 1px solid transparent;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
+    flex: 0 0 auto;
     height: 2.5rem;
     justify-content: center;
-    outline: none;
+    outline: 0;
     width: 2.5rem;
-    .anticon-moon,
-    .anticon-sun { background: none }
-    .anticon-moon {
-        color: var( --white );
-        font-size: 1.35rem;
+    &, &:active, &:focus {
+        background: #ffffff0a;
+        border-color: #ffffff0a;
     }
-    .anticon-sun {
-        color: #fb8;
-        font-size: 2rem;
+    &:hover {
+        background: transparent;
+        border-color: transparent;
+    }
+    .anticon {
+        &-moon, &-sun { background: transparent }
+        &-moon {
+            color: var( --white );
+            font-size: 1.35rem;
+        }
+        &-sun {
+            color: #fb8;
+            font-size: 2rem;
+        }
     }
 }

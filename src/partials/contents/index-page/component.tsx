@@ -11,7 +11,7 @@ import RocketFilledIcon from '@ant-design/icons/RocketFilled';
 
 import { StaticImage } from 'gatsby-plugin-image';
 
-import Anchor from '../../../partials/anchor';
+import Anchor from '../../anchor';
 
 import './style.scss';
 

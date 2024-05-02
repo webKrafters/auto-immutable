@@ -8,7 +8,7 @@ import PageProvider, { UpdaterCtx } from './src/page-context';
 
 import DarkmodeProvider from './src/partials/dark-mode-settings/context';
 
-import Layout from './src/partials/layouts/index';
+import Layout from './src/partials/layouts/index/index';
 
 export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => {
     const update = useContext( UpdaterCtx );

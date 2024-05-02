@@ -84,8 +84,9 @@ const SetMethodApiClearTagPage : React.FC<{className: string}> = ({ className })
         </p>
         <p>
             <strong>Signature 2:</strong>
-            { ' ' }
-            <code>{ '{ ' } '@@CLEAR': &lt;any&gt; { ' }' } // the value has no effect</code>
+            <pre>
+                { `{ '@@CLEAR': <any> }; // the value has no effect.` }
+            </pre>
         </p>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>

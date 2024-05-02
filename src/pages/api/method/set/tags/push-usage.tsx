@@ -48,13 +48,18 @@ consumer.set({
     }
 });`;
 
+const SIGNATURE = `{
+    '@@PUSH': [
+        ...newItemsToAppend
+    ]
+}`;
+
 const SetMethodApiPushTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-push-tag-page ${ className }` }>
     <h1>@@PUSH Tag Usage</h1>
     <p>
         <strong>Signature:</strong>
-        { ' ' }
-        <code>{ '{ ' } '@@PUSH': [ ...newItemsToAppend ] { ' }' }</code>
+        <pre>{ SIGNATURE }</pre>
     </p>
     <h3>Example:</h3>
     <CodeBlock>{ SAMPLE }</CodeBlock>

@@ -89,13 +89,13 @@ const SetMethodApiSetTagPage : React.FC<{className: string}> = ({ className }) =
         <h1>@@SET Tag Usage</h1>
         <p>
             <strong>Signature 1:</strong>
-            { ' ' }
-            <code>{ '{ ' } '@@SET': &lt;any&gt; { ' }' }</code>
+            <pre>{ `{ '@@SET': <any> }` }</pre>
         </p>
         <p>
             <strong>Signature 2:</strong>
-            { ' ' }
-            <code>{ '{ ' } '@@SET': ( currentValue : &lt;any&gt; ) =&gt; &lt;any&gt; { ' }' }</code>
+            <pre>
+                { `{ '@@SET': ( currentValue: <any> ) => <any> }` }
+            </pre>
         </p>
         <p>This tag is mainly for handling edge cases.</p>
         <p>Please use sparingly. In most cases, consumer.set with or without any of the other tags is sufficient and most efficient.</p>

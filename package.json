@@ -35,7 +35,9 @@
   "keywords": [
     "immutable",
     "immutable.js",
-    "auto immutable"
+    "auto immutable",
+    "autoimmutable",
+    "autoimmutable.js"
   ],
   "license": "ISC",
   "main": "index.js",

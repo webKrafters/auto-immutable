@@ -61,9 +61,9 @@ consumer.set({
 
 const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ className, location }) => (
     <article className={ `set-method-api-page ${ className }` }>
-        <h1>Updating Immutable Data</h1>
+        <h1>Updating AutoImmutable Data</h1>
         <p>Any AutoImmutable instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</p>
-        <p>The <code>set(...)</code> method of the <code>Connection</code> instance provides the means of updating Immutable data.</p>
+        <p>The <code>set(...)</code> method of the <code>Connection</code> instance provides the means of updating AutoImmutable data.</p>
         <p>Any attempt to update through any other means is a noop.</p>
         <p>
             This <code>set(...)</code> method accepts <strong>2</strong> arguments - namely:
@@ -82,7 +82,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
         </h2>
         <p>
             <label>
-                Creating, Updating & Deleting Immutable Properties:
+                Creating, Updating & Deleting AutoImmutable data Properties:
                 <br />
                 <strong>
                     <Anchor to="/api/method/set/overview">
@@ -93,7 +93,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
         </p>
         <p>
             <label>
-                Updating Immutable Arrays:
+                Updating AutoImmutable Arrays:
                 <br />
                 <strong>
                     <Anchor to="/api/method/set/overview#indexing">

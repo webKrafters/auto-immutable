@@ -53,13 +53,20 @@ consumer.set({
     }
 });`;
 
+const SIGNATURE = `{
+    '@@SPLICE': [
+        -/+fromIndex,
+        deleteCount, // integer >= 0
+        ...newInserts?
+    ]
+}`;
+
 const SetMethodApiSpliceTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-splice-tag-page ${ className }` }>
         <h1>@@SPLICE Tag Usage</h1>
         <p>
             <strong>Signature:</strong>
-            { ' ' }
-            <code>{ '{ '} '@@SPLICE': [ -/+fromIndex, -/+deleteCount, ...newInserts? ] { ' }' }</code>
+            <pre>{ SIGNATURE }</pre>
         </p>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>

@@ -25,9 +25,9 @@ const Component : React.FC = () => (
 		<Anchor className="group-link" to="/api">API</Anchor>
 		<AnchorIndent1 to="/api#source">AutoImmutable Instance</AnchorIndent1>
 		<AnchorIndent1 to="/api#consumer">Interacting with Instance</AnchorIndent1>
-		<AnchorIndent2 to="/api/method/get">Accessing Immutable Data</AnchorIndent2>
+		<AnchorIndent2 to="/api/method/get">Accessing AutoImmutable Data</AnchorIndent2>
 		<AnchorIndent3 to="/api/method/get/property-path">Specific Data Items</AnchorIndent3>
-		<AnchorIndent2 to="/api/method/set">Updating Immutable Data</AnchorIndent2>
+		<AnchorIndent2 to="/api/method/set">Updating AutoImmutable Data</AnchorIndent2>
 		<AnchorIndent3 to="/api/method/set/overview">Detailed Overview</AnchorIndent3>
 		<AnchorIndent3 to="/api/method/set/overview#indexing">Working with Arrays</AnchorIndent3>
 		<AnchorIndent3 to="/api/method/set/overview#batched-update">Batched Update</AnchorIndent3>

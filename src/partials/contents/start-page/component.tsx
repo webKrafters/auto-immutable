@@ -5,7 +5,7 @@ import CodeBlock from '../../code-block';
 import './style.scss';
 
 const INSTANTIATE_SAMPLE =
-`import { Immutable } from 'auto-immutable';
+`import AutoImmutable from 'auto-immutable';
 
 export interface SampleValue {
     property?: {
@@ -15,7 +15,7 @@ export interface SampleValue {
 
 const initValue : SampleValue = {}; // any object really!
 
-export const sample = new Immutable( initValue );`;
+export const sample = new AutoImmutable( initValue );`;
 
 const SHARING_SAMPLE =
 `import { sample } from 'sample-instance';
@@ -32,7 +32,7 @@ data.set({
 
 console.log( data.get( 'property.value' ) ); // logs: 127
 
-data.disconnect(); // severs access to the sample immutable instance`;
+data.disconnect(); // severs access to the sample AutoImmutable instance`;
 
 const USING_SAMPLE =
 `import { sample } from 'sample-instance';
@@ -49,7 +49,7 @@ data.set({
 
 console.log( data.get( 'property.value' ) ); // logs: 44
 
-data.disconnect(); // severs access to the sample immutable instance`;
+data.disconnect(); // severs access to the sample AutoImmutable instance`;
 
 const Header : React.FC<{
     children: React.ReactNode,
@@ -65,7 +65,7 @@ Header.displayName = 'StartPage.Header';
 const StartPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `start-page${ className ? ` ${ className }` : '' }` }>
         <div className="snippet-intro">
-            Begin by installing <strong>Auto Immutable</strong>.
+            Begin by installing <strong>AutoImmutable</strong>.
         </div>
         <div className="snippet-box">
             <CodeBlock isInline>
@@ -73,15 +73,15 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
             </CodeBlock>
         </div>
         <div className="snippet-intro" id="instantiate">
-            <h3>Creating an Auto Immutable instance</h3>
-            To create an Auto Immutable instance, simply instantiate the AutoImmutable class.
+            <h3>Creating an AutoImmutable instance</h3>
+            To create an AutoImmutable instance, simply instantiate the AutoImmutable class.
         </div>
         <div className="snippet-box">
             <Header>sample-instance.js</Header>
             <CodeBlock>{ INSTANTIATE_SAMPLE }</CodeBlock>
         </div>
         <div className="snippet-intro" id="use">
-            <h3>Using the Auto Immutable instance</h3>
+            <h3>Using the AutoImmutable instance</h3>
             Once instantiated, the new instance can be exported and reused.
         </div>
         <div className="snippet-box">
@@ -89,8 +89,8 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
             <CodeBlock>{ USING_SAMPLE }</CodeBlock>
         </div>
         <div className="snippet-intro" id="share">
-            <h3>Sharing the Auto Immutable instance</h3>
-            Once instantiated, all connected users are reading and writing the same underlying immutable data.
+            <h3>Sharing the AutoImmutable instance</h3>
+            Once instantiated, all connections read and write to the same underlying AutoImmutable data.
         </div>
         <div className="snippet-box">
             <Header>user2.js</Header>

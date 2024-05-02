@@ -53,13 +53,20 @@ consumer.set({
     }
 });`;
 
+const SIGNATURE = `{
+    '@@MOVE': [
+        -/+fromIndex,
+        -/+toIndex,
+        +numItemsToMove? = 1
+    ]
+}`;
+
 const SetMethodApiMoveTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-move-tag-page ${ className }` }>
         <h1>@@MOVE Tag Usage</h1>
         <p>
             <strong>Signature:</strong>
-            { ' ' }
-            <code>{ '{ ' } '@@MOVE': [ -/+fromIndex, -/+toIndex, +numItemsToMove? = 1 ] { ' }' }</code>
+            <pre>{ SIGNATURE }</pre>
         </p>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>

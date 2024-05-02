@@ -84,8 +84,7 @@ const SetMethodApiReplaceTagPage : React.FC<{className: string}> = ({ className 
     <h1>@@REPLACE Tag Usage</h1>
     <p>
         <strong>Signature:</strong>
-        { ' ' }
-        <code>{ '{ '} '@@REPLACE': &lt;any&gt; { ' }' }</code>
+        <pre>{ `{ '@@REPLACE': <any> }` }</pre>
     </p>
     <h3>Example:</h3>
     <CodeBlock>{ SAMPLE }</CodeBlock>

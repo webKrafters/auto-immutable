@@ -65,12 +65,12 @@ const PropertyPathApiPage : React.FC<{className: string}> = ({ className }) => (
                         The property path <code>a.c.e</code> accesses the <code>e=5</code> property.
                     </p>
                     <p>Either of the property paths <code>a.c.f.1</code>, <code>a.c.f.-2</code>, <code>a.c.f[1]</code> and <code>a.c.f[-2]</code> is a valid property path to access the <code>[1]=2</code> property.</p>
-                    <p>A special property path, <Anchor to="/api/method/get/property-path#global">@@GLOBAL</Anchor>, may be used to access the immutable data as a whole.</p>
+                    <p>A special property path, <Anchor to="/api/method/get/property-path#global">@@GLOBAL</Anchor>, may be used to access the AutoImmutable data as a whole.</p>
                 </p>
             </div>
             <h3 id="global">What is the @@GLOBAL keyword?</h3>
             <div>
-                <strong>@@GLOBAL</strong> is a property path which can be used to obtain a snapshot of the entire immutable data held in the AutoImmutable instance.<br />
+                <strong>@@GLOBAL</strong> is a property path which can be used to obtain a snapshot of the entire AutoImmutable data held in the AutoImmutable instance.<br />
             </div>
         </div>
         <div>

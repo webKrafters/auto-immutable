@@ -19,6 +19,7 @@ export default {
         themeColor: '#fc084d'
     },
     language: 'en',
+    siteUrl: 'https://auto-immutable.js.org',
     title: pkgJson.name
         .replace( /-docs$/i, '-jS' )
         .split( /-+/ )

@@ -42,18 +42,25 @@
   "license": "ISC",
   "main": "index.js",
   "name": "auto-immutable-docs",
+  "overrides": {
+    "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  },
   "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/webKrafters/auto-immutable"
   },
   "scripts": {
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "gatsby clean && gatsby build && node ./merge-docs-with-main.js",
     "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "env": "gatsby info",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "serve": "gatsby serve",
+    "start": "gatsby develop",
     "typecheck": "tsc --noEmit"
   },
   "version": "0.0.1"

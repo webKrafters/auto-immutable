@@ -10,15 +10,24 @@ import DarkmodeProvider from './src/partials/dark-mode-settings/context';
 
 import Layout from './src/partials/layouts/index/index';
 
-export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => {
+const PageManager : React.FC<{
+    children : React.ReactNode,
+    props : {uri : string}
+}> = ({ children, props }) => {
     const update = useContext( UpdaterCtx );
     useEffect(() => update( s => ({
         ...s,
         ...props,
         isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
     }) ), [ props ]);
-    return ( <Layout { ...props }>{ element }</Layout> );
+    return ( <Layout { ...props }>{ children }</Layout> );
 };
+
+export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => (
+    <PageManager props={ props }>
+        { element }
+    </PageManager>
+);
 
 export const wrapRootElement : GatsbySSR["wrapRootElement"] = ({ element }) => (
     <PageProvider>

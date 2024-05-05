@@ -1,6 +1,6 @@
 import type { GatsbyBrowser } from 'gatsby';
 
-import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
+import React, { useContext, useEffect, useLayoutEffect } from 'react';
 
 import metadata, { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
 
@@ -16,7 +16,10 @@ import Layout from './src/partials/layouts/index';
 //   console.log("old pathname", prevLocation ? prevLocation.pathname : null)
 // }
 
-export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, props }) => {
+const PageManager : React.FC<{
+    children: React.ReactNode,
+    props: {uri : string}
+}> = ({ children, props }) => {
     const updatePageCtx = useContext( PageCtxUpdater );
     const darkmode = useContext( DarkmodeValueCtx );
     useLayoutEffect(() => {
@@ -29,8 +32,14 @@ export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, pr
         ...props,
         isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
     }) ), [ props ]);
-    return ( <Layout { ...props }>{ element }</Layout> );
+    return ( <Layout { ...props }>{ children }</Layout> );
 };
+
+export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, props }) => (
+    <PageManager  props={ props }>
+        { element }
+    </PageManager>
+);
 
 export const wrapRootElement : GatsbyBrowser["wrapRootElement"] = ({ element }) => (
     <PageProvider>

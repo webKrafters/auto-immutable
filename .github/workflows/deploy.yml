@@ -25,6 +25,6 @@ jobs:
       - run: |
           git config email
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/webkrafters/auto-immutable.git
-          npm run deploy --u "github-actions-bot <support+actions@github.com>"
+          npm run deploy -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

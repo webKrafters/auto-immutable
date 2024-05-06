@@ -26,6 +26,7 @@
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "gh-pages": "^6.1.1",
     "prettier": "2.2.1",
     "typescript": "^5.3.3"
   },
@@ -52,11 +53,12 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/webKrafters/auto-immutable.js"
+    "url": "https://github.com/webKrafters/auto-immutable.git"
   },
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -f -d public",
     "develop": "gatsby develop",
     "env": "gatsby info",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

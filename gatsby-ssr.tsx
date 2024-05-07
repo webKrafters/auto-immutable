@@ -10,12 +10,12 @@ import DarkmodeProvider from './src/partials/dark-mode-settings/context';
 
 import Layout from './src/partials/layouts/index/index';
 
-export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => (
+export const wrapPageElement : GatsbySSR[ 'wrapPageElement' ] = ({ element, props }) => (
     <Layout { ...props }>{ element }</Layout>
 );
 
-export const wrapRootElement : GatsbySSR["wrapRootElement"] = ({ element, pathname }) => (
-    <PageProvider initState = {{ isNoSiderPage: NO_SIDER_URI_PATTERN.test( pathname ) }}>
+export const wrapRootElement : GatsbySSR[ 'wrapRootElement' ] = ({ element, pathname }) => (
+    <PageProvider initState={{ isNoSiderPage: NO_SIDER_URI_PATTERN.test( pathname ?? '' ) }}>
         <DarkmodeProvider>
             { element }
         </DarkmodeProvider>

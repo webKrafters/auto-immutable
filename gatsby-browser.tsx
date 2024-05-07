@@ -1,6 +1,6 @@
-import type { PageProps } from './src/page-context';
-
 import type { GatsbyBrowser } from 'gatsby';
+
+import type { PageProps } from './src/page-context';
 
 import React, { useContext, useEffect, useLayoutEffect } from 'react';
 
@@ -37,14 +37,18 @@ const PageManager : React.FC<{
     return ( <Layout { ...props }>{ children }</Layout> );
 };
 
-export const wrapPageElement : GatsbyBrowser["wrapPageElement"] = ({ element, props }) => (
+export const wrapPageElement : GatsbyBrowser[ 'wrapPageElement' ] = ({ element, props }) => (
     <PageManager  props={ props }>
         { element }
     </PageManager>
 );
 
-export const wrapRootElement : GatsbyBrowser["wrapRootElement"] = ({ element, pathname  }) => (
-    <PageProvider initState={{ isNoSiderPage: NO_SIDER_URI_PATTERN.test( pathname ) }}>
+export const wrapRootElement : GatsbyBrowser[ 'wrapRootElement' ] = ({ element, pathname  }) => (
+    <PageProvider initState={{
+        isNoSiderPage: NO_SIDER_URI_PATTERN.test(
+            location?.pathname ?? pathname ?? ''
+        )
+    }}>
         <DarkmodeProvider initValue={
             window.localStorage?.getItem( metadata.darkmode.key ) !== 'false'
                 ? metadata.darkmode.defaultValue

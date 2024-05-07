@@ -55,7 +55,7 @@
     "url": "https://github.com/webKrafters/auto-immutable.git"
   },
   "scripts": {
-    "build": "gatsby clean && gatsby build --prefix-paths && node ./bundle-site",
+    "build": "gatsby clean && gatsby build && node ./bundle-site",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
     "env": "gatsby info",

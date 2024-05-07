@@ -1,5 +1,9 @@
 import pkgJson from '../package.json';
 
+// export const PATH_PREFIX = '/auto-immutable';
+
+// export const NO_SIDER_URI_PATTERN = new RegExp( `^(?:${ PATH_PREFIX })?\/(?:quick-start)?(?:\?.*)?$` );
+
 export const NO_SIDER_URI_PATTERN = /^\/(?:quick-start)?(?:\?.*)?$/;
 
 export default {

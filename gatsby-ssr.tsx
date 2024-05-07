@@ -1,36 +1,21 @@
 import type { GatsbySSR } from 'gatsby';
 
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 
 import metadata, { NO_SIDER_URI_PATTERN } from './gatsby-config/metadata';
 
-import PageProvider, { UpdaterCtx } from './src/page-context';
+import PageProvider from './src/page-context';
 
 import DarkmodeProvider from './src/partials/dark-mode-settings/context';
 
 import Layout from './src/partials/layouts/index/index';
 
-const PageManager : React.FC<{
-    children : React.ReactNode,
-    props : {uri : string}
-}> = ({ children, props }) => {
-    const update = useContext( UpdaterCtx );
-    useEffect(() => update( s => ({
-        ...s,
-        ...props,
-        isNoSiderPage: NO_SIDER_URI_PATTERN.test( props.uri )
-    }) ), [ props ]);
-    return ( <Layout { ...props }>{ children }</Layout> );
-};
-
 export const wrapPageElement : GatsbySSR["wrapPageElement"] = ({ element, props }) => (
-    <PageManager props={ props }>
-        { element }
-    </PageManager>
+    <Layout { ...props }>{ element }</Layout>
 );
 
-export const wrapRootElement : GatsbySSR["wrapRootElement"] = ({ element }) => (
-    <PageProvider>
+export const wrapRootElement : GatsbySSR["wrapRootElement"] = ({ element, pathname }) => (
+    <PageProvider initState = {{ isNoSiderPage: NO_SIDER_URI_PATTERN.test( pathname ) }}>
         <DarkmodeProvider>
             { element }
         </DarkmodeProvider>

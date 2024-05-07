@@ -9,8 +9,11 @@ export type PageProps = Partial<P & {
 export const UpdaterCtx = createContext<React.Dispatch<React.SetStateAction<PageProps>>>(()=>{});
 export const ValueCtx = createContext<PageProps>({});
 
-const Provider : React.FC<{children : React.ReactNode}> = ({ children }) => {
-    const [ state, setState ] = useState({});
+const Provider : React.FC<{
+    children : React.ReactNode,
+    initState : PageProps
+}> = ({ children, initState }) => {
+    const [ state, setState ] = useState( () => initState );
     return (
         <UpdaterCtx.Provider value={ setState }>
             <ValueCtx.Provider value={ state }>

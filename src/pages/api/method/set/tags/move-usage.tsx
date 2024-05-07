@@ -64,10 +64,8 @@ const SIGNATURE = `{
 const SetMethodApiMoveTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-move-tag-page ${ className }` }>
         <h1>@@MOVE Tag Usage</h1>
-        <p>
-            <strong>Signature:</strong>
-            <pre>{ SIGNATURE }</pre>
-        </p>
+        <strong>Signature:</strong>
+        <pre>{ SIGNATURE }</pre>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

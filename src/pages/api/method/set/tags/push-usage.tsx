@@ -57,10 +57,8 @@ const SIGNATURE = `{
 const SetMethodApiPushTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-push-tag-page ${ className }` }>
     <h1>@@PUSH Tag Usage</h1>
-    <p>
-        <strong>Signature:</strong>
-        <pre>{ SIGNATURE }</pre>
-    </p>
+    <strong>Signature:</strong>
+    <pre>{ SIGNATURE }</pre>
     <h3>Example:</h3>
     <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

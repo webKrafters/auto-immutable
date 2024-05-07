@@ -77,17 +77,14 @@ consumer.set({
 const SetMethodApiClearTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-clear-tag-page ${ className }` }>
         <h1>@@CLEAR Tag Usage</h1>
-        <p>
-            <strong>Signature 1:</strong>
-            { ' ' }
-            <code>'@@CLEAR'</code>
-        </p>
-        <p>
-            <strong>Signature 2:</strong>
-            <pre>
-                { `{ '@@CLEAR': <any> }; // the value has no effect.` }
-            </pre>
-        </p>
+        <strong>Signature 1:</strong>
+        { ' ' }
+        <code>'@@CLEAR'</code>
+        <p>{ ' ' } </p>
+        <strong>Signature 2:</strong>
+        <pre>
+            { `{ '@@CLEAR': <any> }; // the value has no effect.` }
+        </pre>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

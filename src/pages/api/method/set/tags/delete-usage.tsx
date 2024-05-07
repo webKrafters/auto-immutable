@@ -81,10 +81,8 @@ const SIGNATURE = `{
 const SetMethodApiDeleteTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-delete-tag-page ${ className }` }>
         <h1>@@DELETE Tag Usage</h1>
-        <p>
-            <strong>Signature:</strong>
-            <pre>{ SIGNATURE }</pre>
-        </p>
+        <strong>Signature:</strong>
+        <pre>{ SIGNATURE }</pre>
         <h3>Example:</h3>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

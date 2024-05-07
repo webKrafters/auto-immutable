@@ -82,10 +82,8 @@ consumer.set({
 const SetMethodApiReplaceTagPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-replace-tag-page ${ className }` }>
     <h1>@@REPLACE Tag Usage</h1>
-    <p>
-        <strong>Signature:</strong>
-        <pre>{ `{ '@@REPLACE': <any> }` }</pre>
-    </p>
+    <strong>Signature:</strong>
+    <pre>{ `{ '@@REPLACE': <any> }` }</pre>
     <h3>Example:</h3>
     <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

@@ -10,12 +10,18 @@ export type Props = LinkProps;
 
 const isExternalLink = ( path : string ) => /^(?:https?:)?\/\//.test( path );
 
-const Component : React.FC<LinkProps> = ({ children, ...props }) => {
+const Component : React.FC<LinkProps> = ({ children, hideIcon, ...props }) => {
     const isExternal = useMemo(() => (
         props.target === '_blank' || isExternalLink( props.to )
     ), [ props.target, props.to ]);
     if( isExternal ) {
-        return ( <ExternalAnchor { ...props }>{ children }</ExternalAnchor> );
+        return (
+            <ExternalAnchor
+                { ...props }
+                hideIcon={ hideIcon }
+            >
+                { children }
+            </ExternalAnchor> );
     }
     return (
         <GatsbyLink { ...props }>

@@ -1,6 +1,6 @@
 import pkgJson from '../package.json';
 
-export const NO_SIDER_URI_PATTERN = /^(?:\/(?:quick-start)?(?:\?.*)?)?$/;
+export const NO_SIDER_URI_PATTERN = /^(?:\/(?:quick-start\/?)?(?:\?.*)?)?$/;
 
 export default {
     _24Hours: 8.64e7,

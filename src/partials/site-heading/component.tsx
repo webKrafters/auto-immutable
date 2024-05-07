@@ -41,20 +41,12 @@ const SiderToggleable : React.FC<Props> = ({ isSiderCollapsed, onToggleSider }) 
 };
 
 const Component : React.FC<Props> = props => { 
-  const { site: { siteMetadata: {
-    title,
-    url: {
-      repo: repoUrl
-    }
-  } } } = useStaticQuery(
+  const { site: { siteMetadata: { title } } } = useStaticQuery(
     graphql`
         query HeaderVm{
             site {
                 siteMetadata {
-                    title,
-                    url {
-                        repo
-                    }
+                    title
                 }
             }
         }
@@ -69,7 +61,9 @@ const Component : React.FC<Props> = props => {
       ) }
       <div className="branding">
         <span className="pkg-title" >
-          <Anchor hideIcon to={ repoUrl }>{ title }</Anchor>
+          <Anchor hideIcon to="/">
+            { title }
+          </Anchor>
         </span>
         <Anchor className="logo-link" to="/">
           <StaticImage

@@ -1,8 +1,6 @@
 var fs = require( 'fs' );
 var path = require( 'path' );
 
-const __dirPathTokens = __dirname.split( path.sep );
-
 try {
     fs.mkdirSync( 'docs' );
 } catch( e ) {

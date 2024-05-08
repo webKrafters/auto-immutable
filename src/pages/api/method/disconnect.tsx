@@ -4,7 +4,7 @@ import Anchor from '../../../partials/anchor';
 
 import CodeBlock from '../../../partials/code-block';
 
-const noteStyle = { color: '#f74' };
+import NotePad from '../../../partials/pad/note';
 
 const DISCONNECT_SAMPLE =
 `import AutoImmutable from 'auto-immutable';
@@ -104,7 +104,7 @@ const DisconnectMethodApiPage : React.FC<{className: string}> = ({ className }) 
         <h2>Further Considerations</h2>
         <p>This method serves as the final association between a consumer and its source AutoImmutable instance.</p>
         <p>Once issued, the instant consumer loses accessibility to its source AutoImmutable instance.</p>
-        <p><strong style={ noteStyle }><u>Note:</u></strong> calling an AutoImmutable <strong><code>close(...)</code></strong> method summarily disconnects all its connected consumers. This instant consumer, if connected to the given AutoImmutable instance, will be disconnected as well.</p>
+        <NotePad>calling an AutoImmutable <strong><code>close(...)</code></strong> method summarily disconnects all its connected consumers. This instant consumer, if connected to the given AutoImmutable instance, will be disconnected as well.</NotePad>
         <CodeBlock>{ SUMMARY_CLOSURE_SAMPLE }</CodeBlock>
     </article>
 );

@@ -1,7 +1,9 @@
 import React from 'react';
 
-import CodeBlock from '../../../../../partials/code-block';
 import Anchor from '../../../../../partials/anchor';
+import CodeBlock from '../../../../../partials/code-block';
+import Paragraph from '../../../../../partials/paragraph';
+
 
 const SAMPLE =
 `import AutoImmutable, { Tag } from 'auto-immutable';
@@ -97,9 +99,9 @@ consumer.set([
 const SetMethodApiFullUsagePage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-full-usage-page ${ className }` }>
         <h1>Combination Tags Usage:</h1>
-        <p>Tags may be used in combination with the default usage where all top-level tag command results in property are sequentially merged into AutoImmutable data followed by the merging of the rest of the property changes.</p>
-        <p>Get finer control over update order with the <strong><Anchor to="/api/method/set/tags/order-of-operations#batched-update-example">batched update method</Anchor></strong> illustrated in the next section.</p>
-        <h3>Example:</h3>
+        <Paragraph>Tags may be used in combination with the default usage where all top-level tag commands' results for a given data property are merged into AutoImmutable data followed by the merging of the rest of the property changes.</Paragraph>
+        <Paragraph>Get finer control over update order with the <strong><Anchor to="/api/method/set/tags/order-of-operations#batched-update-example">batched update method</Anchor></strong> illustrated in the next section.</Paragraph>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
         <h3 id="batched-update-example">Batched Update Example:</h3>
         <CodeBlock>{ BATCHED_UPDATE_SAMPLE }</CodeBlock>

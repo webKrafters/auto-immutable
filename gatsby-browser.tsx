@@ -12,11 +12,14 @@ import DarkmodeProvider, { ValueCtx as DarkmodeValueCtx } from './src/partials/d
 
 import Layout from './src/partials/layouts/index';
 
-// // Logs when the client route changes
-// exports.onRouteUpdate = ({ location, prevLocation }) => {
-//   console.log("new pathname", location.pathname)
-//   console.log("old pathname", prevLocation ? prevLocation.pathname : null)
-// }
+export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
+    location: { href }, prevLocation
+}) => {
+    window.scroll( 0, 0 );
+    ( new URL( href ).hash ).length
+        ? setTimeout( () => window.history.replaceState( undefined, '', href ), 500 )
+        : document.querySelector( '.site-body > main' )?.scroll( 0, 0 );
+};
 
 const PageManager : React.FC<{
     children: React.ReactNode,

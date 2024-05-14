@@ -55,13 +55,13 @@ const IndexPage: React.FC<{className : string}> = ({ className }) => (
           Auto-Immutable protects values in a running program from random mutations. All attempts to mutate data directly are ignored.
       </Tile>
       <Tile icon={ <ClusterOutlinedIcon /> } title="Simplicity">
-          Simple write-friendly APIs. Simply supply the new write value object and it will be merged into the current immutable data. No need for <code>[].concat([...])</code>, <code>Object.assign(...)</code>, <code>$.extend(...)</code><code>...rest</code>, <code>...spread</code> or any similar operation. See <Anchor to="/api/method/set"><code>immutable.set(...)</code></Anchor>.
+          Simple write-friendly APIs. Simply supply the new write value object and it will be merged into the current immutable data. See <Anchor to="/api/method/set"><code>immutable.set(...)</code></Anchor>.
       </Tile>
       <Tile icon={ <QrcodeOutlinedIcon /> } title="Accessibility">
           No matter how shallow or deeply nested your data, read access is straight-forward. Simply call the <code>get(...)</code> with the object paths to the data properties you would like to read. See <Anchor to="/api/method/get"><code>immutable.get(...)</code></Anchor>.
       </Tile>
       <Tile icon={ <OrderedListOutlinedIcon /> } title="Indexing">
-        Ability to modify data at the array index level is supported. Recognizes <b>negative array indexing</b>. Please see <Anchor to="/concepts/property-path">Property Path</Anchor> and <code>immutable.set(...)</code> <Anchor to="/api/method/set/array-indexing">Indexing</Anchor>.
+        Ability to modify data at the array index level is supported. Recognizes <b>negative array indexing</b>. Please see <Anchor to="/api/method/get/property-path">Property Path</Anchor> and <code>immutable.set(...)</code> <Anchor to="/api/method/set/overview#indexing">Indexing</Anchor>.
       </Tile>
     </div>
   </>

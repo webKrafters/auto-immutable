@@ -66,7 +66,7 @@ const SetMethodApiMoveTagPage : React.FC<{className: string}> = ({ className }) 
         <h1>@@MOVE Tag Usage</h1>
         <strong>Signature:</strong>
         <pre>{ SIGNATURE }</pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );

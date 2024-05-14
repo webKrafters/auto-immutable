@@ -18,7 +18,7 @@ const FeaturesHistoryPage : React.FC<{className: string}> = ({ className }) => (
                 <TRow><TCol><b>1.</b></TCol><TCol>Closable <Anchor to="/api#source"><code>AutoImmutable class</code></Anchor></TCol></TRow>
                 <TRow><td><b>2.</b></td><td><Anchor to="/api#consumer"><code>Reusability</code></Anchor></td></TRow>
                 <TRow><td><b>3.</b></td><td>Developer controlled <Anchor to="/api/method/disconnect"><code>Memory Management</code></Anchor></td></TRow>
-                <TRow><td><b>4.</b></td><td><Anchor to="/api/method/set/overview#batched-update"><code>Batched update</code></Anchor></td></TRow>
+                <TRow><td><b>4.</b></td><td><Anchor to="/api/method/set/overview#batched-update"><code>Batched updates</code></Anchor></td></TRow>
                 <TRow><td><b>5.</b></td><td>Special array handling: <Anchor to="/api/method/set/overview#indexing"><code>Indexing</code></Anchor></td></TRow>
                 <TRow>
                     <td><b>6.</b></td>

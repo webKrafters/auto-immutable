@@ -85,7 +85,7 @@ const SetMethodApiClearTagPage : React.FC<{className: string}> = ({ className })
         <pre>
             { `{ '@@CLEAR': <any> }; // the value has no effect.` }
         </pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );

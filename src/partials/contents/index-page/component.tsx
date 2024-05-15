@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import type { PageProps } from '../../../page-context';
+
 import React from 'react';
 
 import AuditOutlinedIcon from '@ant-design/icons/AuditOutlined';
@@ -29,7 +31,7 @@ const Tile : React.FC<{
 );
 Tile.displayName = 'IndexPage.Tile';
 
-const IndexPage: React.FC<{className : string}> = ({ className }) => (
+const IndexPage: React.FC<PageProps> = ({ className }) => (
   <>
     <article className={ `index-page ${ className }` }>
       <div className="hero">

@@ -1,3 +1,6 @@
+
+import type { PageProps } from '../../../page-context';
+
 import React from 'react';
 
 import { graphql, useStaticQuery } from 'gatsby';
@@ -9,7 +12,7 @@ import Paragraph from '../../paragraph';
 
 import './style.scss';
 
-const IntroPage: React.FC<{ className: string }> = ({ className }) => {
+const IntroPage: React.FC<PageProps> = ({ className }) => {
 	const { site: { siteMetadata: {
 		title,
 		url: {

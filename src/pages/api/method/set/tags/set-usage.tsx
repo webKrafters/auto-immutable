@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -85,16 +87,14 @@ consumer.set({
     }
 });`;
 
-const SetMethodApiSetTagPage : React.FC<{className: string}> = ({ className }) => (
-    <article className={ `set-method-api-set-tag-page ${ className }` }>
+const SetMethodApiSetTagPage : React.FC<PageProps> = ({ className }) => (
+   <article className={ `set-method-api-set-tag-page ${ className }` }>
         <h1>@@SET Tag Usage</h1>
         <strong>Signature 1:</strong>
         <pre>{ `{ '@@SET': <any> }` }</pre>
         <Paragraph>{ ' ' } </Paragraph>
         <strong>Signature 2:</strong>
-        <pre>
-            { `{ '@@SET': ( currentValue: <any> ) => <any> }` }
-        </pre>
+        <pre>{ `{ '@@SET': ( currentValue: <any> ) => <any> }` }</pre>
         <Paragraph id="purpose">This tag is mainly for handling edge cases.</Paragraph>
         <Paragraph>Please use sparingly. In most cases, calling the consumer.set(...) method with or without any of the other tags is sufficient and most efficient.</Paragraph>
         <Paragraph>This and the '<strong><Anchor to="/api/method/set/tags/replace-usage">@@REPLACE</Anchor></strong>' tag are functionally equivalent when used with a replacement value argument.</Paragraph>
@@ -106,4 +106,6 @@ const SetMethodApiSetTagPage : React.FC<{className: string}> = ({ className }) =
 
 export default SetMethodApiSetTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@SET</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@SET</title>
+);

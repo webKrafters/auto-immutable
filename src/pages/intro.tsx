@@ -2,34 +2,16 @@ import type { HeadFC } from 'gatsby';
 
 import React from 'react';
 
-import { graphql } from 'gatsby';
-
-export interface HeadDataProp {
-    site: {
-        siteMetadata: {
-            title : string
-        }
-    }
-}
+import metadata from '../../gatsby-config/metadata';
 
 export { default } from '../partials/contents/intro-page';
 
-export const Head: HeadFC<HeadDataProp> = ({ data }) => (
+export const Head : HeadFC = () => (
     <>
-        <title>Welcome to { data.site.siteMetadata.title }!</title>
+        <title>Welcome to { metadata.title }!</title>
         <meta
-            content={ `Welcome to ${ data.site.siteMetadata.title }.` }
+            content={ `Welcome to ${ metadata.title }.` }
             name="description"
         />
     </>
 );
-
-export const query = graphql`
-    query IntroTitle {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
-`

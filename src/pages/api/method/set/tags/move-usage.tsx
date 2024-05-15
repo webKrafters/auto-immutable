@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -61,7 +63,7 @@ const SIGNATURE = `{
     ]
 }`;
 
-const SetMethodApiMoveTagPage : React.FC<{className: string}> = ({ className }) => (
+const SetMethodApiMoveTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `set-method-api-move-tag-page ${ className }` }>
         <h1>@@MOVE Tag Usage</h1>
         <strong>Signature:</strong>
@@ -73,4 +75,6 @@ const SetMethodApiMoveTagPage : React.FC<{className: string}> = ({ className }) 
 
 export default SetMethodApiMoveTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@MOVE</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@MOVE</title>
+);

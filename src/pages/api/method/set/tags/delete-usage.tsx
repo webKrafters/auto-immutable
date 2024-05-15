@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -78,7 +80,7 @@ const SIGNATURE = `{
     ]
 };`
 
-const SetMethodApiDeleteTagPage : React.FC<{className: string}> = ({ className }) => (
+const SetMethodApiDeleteTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `set-method-api-delete-tag-page ${ className }` }>
         <h1>@@DELETE Tag Usage</h1>
         <strong>Signature:</strong>
@@ -90,4 +92,6 @@ const SetMethodApiDeleteTagPage : React.FC<{className: string}> = ({ className }
 
 export default SetMethodApiDeleteTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@DELETE</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@DELETE</title>
+);

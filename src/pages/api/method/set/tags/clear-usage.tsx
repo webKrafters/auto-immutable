@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -74,8 +76,8 @@ consumer.set({
     }
 });`;
 
-const SetMethodApiClearTagPage : React.FC<{className: string}> = ({ className }) => (
-    <article className={ `set-method-api-clear-tag-page ${ className }` }>
+const SetMethodApiClearTagPage : React.FC<PageProps> = ({ className }) => (
+   <article className={ `set-method-api-clear-tag-page ${ className }` }>
         <h1>@@CLEAR Tag Usage</h1>
         <strong>Signature 1:</strong>
         { ' ' }
@@ -92,4 +94,6 @@ const SetMethodApiClearTagPage : React.FC<{className: string}> = ({ className })
 
 export default SetMethodApiClearTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@CLEAR</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@CLEAR</title>
+);

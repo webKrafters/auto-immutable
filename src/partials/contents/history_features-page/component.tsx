@@ -1,15 +1,16 @@
+import type { PageProps } from '../../../page-context';
+
 import React from 'react';
 
 import Anchor from '../../anchor';
 
 import './style.scss';
-
 const TRow : React.FC<{children: React.ReactNode}> = ({ children }) => ( <tr className="vertical-top">{ children }</tr> );
 TRow.displayName = 'eaturesHistory.TRow';
 
 const TCol : React.FC<{children: React.ReactNode}> = ({ children }) => ( <td className="top-barred">{ children }</td> );
 
-const FeaturesHistoryPage : React.FC<{className: string}> = ({ className }) => (
+const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `features-history-page ${ className }` }>
         <h1 id="changes">What's Changed?</h1>
         <table>

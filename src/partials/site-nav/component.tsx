@@ -1,38 +1,21 @@
 import type { Props } from '../anchor';
 
-import React, { useContext, useEffect, useMemo, useState } from 'react';
-
-import { ValueCtx as PageCtxValue } from '../../page-context';
+import React from 'react';
 
 import Anchor from '../anchor';
 
+import BrowserStatus from './with-status/browser';
+import ServerStatus from './with-status/server';
+
 import './style.scss';
 
-const WithStatus : React.FC<Props> = ({ children, to: toProp }) => {
-	const { location } = useContext( PageCtxValue );
-	const [ active, setActive ] = useState( false );
-	const to = useMemo(() => {
-		const { hash, pathname } = new URL( window.location.origin + toProp );
-		return `${ pathname }/${ hash.length ? hash : '' }`; 
-	}, [ toProp ]);
-	useEffect(() => setActive(
-		location?.href.slice( location.origin.length ) === to
-	), [ location ]);
-	return (
-		 <div { ...active ? { className: 'active' } : {} }>
-			{ children }
-		</div>
-	);
-}
+const WithStatus = typeof window === 'undefined' ? ServerStatus : BrowserStatus;
 
-WithStatus.displayName = 'Site.Nav.WithStatus';
-
-let NavLink : React.FC<Props> = props => (
+const NavLink : React.FC<Props> = props => (
 	<WithStatus { ...props }>
 		<Anchor { ...props } />
 	</WithStatus>
 );
-
 
 const createIndentedNavLink = ( indentClassNum : 1|2|3|4 ) : React.FC<Props> => ({ className, ...props }) => (
 	<WithStatus { ...props }>

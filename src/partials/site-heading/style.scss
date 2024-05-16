@@ -4,6 +4,7 @@
     background: var( --shbg );
     border-bottom: 1px solid;
     border-color: var( --border-color );
+    > * { flex: 1 1 auto }
     > :last-child {
         color: var( --color );
         flex: 1 1 auto;
@@ -37,6 +38,8 @@
         }
     }
     .site-tags {
+        // @debug
+        // @media ( max-width: 935px ) {
         @media ( max-width: 835px ) {
             display: none;
         }
@@ -52,10 +55,12 @@
         border-right: 2px solid var( --blue );
         color: var( --white );
         display: block;
+        flex: 0 0 2rem;
         @media ( min-width: 992px ) { 
             display: none;
         }
-    }
+        > * { font-size: 1rem }
+     }
     .sider-toggle-btn,
     .branding,
     .logo,
@@ -91,5 +96,8 @@
             font-weight: 900;
             font-variant: normal;
         }
+    }
+    .dark-mode-settings {
+        margin-right: 1rem;
     }
 }

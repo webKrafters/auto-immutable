@@ -1,5 +1,7 @@
 import type { HeadFC } from 'gatsby';
 
+import { PageProps } from '../page-context';
+
 import React from 'react';
 
 import Anchor from '../partials/anchor';
@@ -13,7 +15,7 @@ const ctaStyle = {
     justifyContent: 'flex-end'
 };
 
-const QuickStartPage : React.FC<{className : string}> = ({ className }) => (
+const QuickStartPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `quick-start-page ${ className }` }>
         <h1>Quick Start</h1>
         <StartPage />
@@ -27,4 +29,6 @@ const QuickStartPage : React.FC<{className : string}> = ({ className }) => (
 
 export default QuickStartPage;
 
-export const Head: HeadFC = () => ( <title>Quick Start</title> );
+export const Head : HeadFC = () => (
+    <title>Quick Start</title>
+);

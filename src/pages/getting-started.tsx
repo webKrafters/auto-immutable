@@ -1,10 +1,12 @@
 import type { HeadFC } from 'gatsby';
 
+import type { PageProps } from '../page-context';
+
 import React from 'react';
 
 import StartPage from "../partials/contents/start-page";
 
-const GettingStartedPage : React.FC<{className : string}> = ({ className }) => (
+const GettingStartedPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `getting-started-page ${ className }` }>
         <h1>Getting Started</h1>
         <StartPage />
@@ -13,5 +15,6 @@ const GettingStartedPage : React.FC<{className : string}> = ({ className }) => (
 
 export default GettingStartedPage;
 
-
-export const Head: HeadFC = () => ( <title>Getting Started</title> );
+export const Head : HeadFC = () => (
+    <title>Getting Started</title>
+);

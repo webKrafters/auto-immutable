@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -54,16 +56,18 @@ const SIGNATURE = `{
     ]
 }`;
 
-const SetMethodApiPushTagPage : React.FC<{className: string}> = ({ className }) => (
+const SetMethodApiPushTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `set-method-api-push-tag-page ${ className }` }>
     <h1>@@PUSH Tag Usage</h1>
     <strong>Signature:</strong>
     <pre>{ SIGNATURE }</pre>
-    <h3>Example:</h3>
+    <h4>Example:</h4>
     <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 
 export default SetMethodApiPushTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@PUSH</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@PUSH</title>
+);

@@ -1,4 +1,6 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
 
@@ -79,16 +81,18 @@ consumer.set({
     }
 });`;
 
-const SetMethodApiReplaceTagPage : React.FC<{className: string}> = ({ className }) => (
+const SetMethodApiReplaceTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `set-method-api-replace-tag-page ${ className }` }>
     <h1>@@REPLACE Tag Usage</h1>
     <strong>Signature:</strong>
     <pre>{ `{ '@@REPLACE': <any> }` }</pre>
-    <h3>Example:</h3>
+    <h4>Example:</h4>
     <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 
 export default SetMethodApiReplaceTagPage;
 
-export const Head : HeadFC = () => ( <title>{ metadata.title }: @@REPLACE</title> );
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@REPLACE</title>
+);

@@ -109,10 +109,12 @@ const NoSider : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAu
         <main>
             <div className="tags-area">
                 <SiteTags />
-                <AuxSiderToggleable
-                    isOn={ !props.isAuxCollapsed }
-                    onToggle={ props.onToggleAux }
-                />
+                { !useContext( ValueCtx ).isNoSiderPage && (
+                    <AuxSiderToggleable
+                        isOn={ !props.isAuxCollapsed }
+                        onToggle={ props.onToggleAux }
+                    />
+                ) }
             </div>
             { page }
         </main>

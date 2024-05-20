@@ -1,0 +1,14 @@
+.nav-minor {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    justify-content: space-between;
+    > * {
+        flex: none;
+        overflow: hidden;
+        text-align: center;
+        text-wrap: nowrap;
+    }
+    a:hover { opacity: 0.8 }
+}

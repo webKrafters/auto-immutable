@@ -90,7 +90,7 @@ const Sider : ForwardRefExoticComponent<{
 
 Sider.displayName = 'Site.Body.Sider';
 
-const NoSider : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAux">> = ({ children, ...props }) => {
+const Main : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAux">> = ({ children, ...props }) => {
     const page = useMemo(() => Children.map(
         children as React.ReactHTMLElement<any>,
         c => {
@@ -109,15 +109,45 @@ const NoSider : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAu
         <main>
             <div className="tags-area">
                 <SiteTags />
-                { !useContext( ValueCtx ).isNoSiderPage && (
-                    <AuxSiderToggleable
-                        isOn={ !props.isAuxCollapsed }
-                        onToggle={ props.onToggleAux }
-                    />
-                ) }
+                <AuxSiderToggleable
+                    isOn={ !props.isAuxCollapsed }
+                    onToggle={ props.onToggleAux }
+                />
             </div>
             { page }
         </main>
+    );
+};
+Main.displayName = 'Site.Body.Main';
+
+const NoSider : React.FC<Props> = ({
+    children,
+    isAuxCollapsed,
+    onAuxVisibilityChange,
+    onToggleAux
+}) => {
+    const auxSliderRef = useRef<HTMLElement>( null );
+    const closeAux = useCallback(() => onAuxVisibilityChange( true ), [ onAuxVisibilityChange ]);
+    const href = typeof location === 'undefined' ? undefined : location.href;
+    useLayoutEffect(() => onAuxVisibilityChange( true ), [ href ]);
+    return (
+        <>
+            <Main
+                isAuxCollapsed={ isAuxCollapsed }
+                onToggleAux={ onToggleAux }
+            >
+                { children }
+            </Main>
+            <AuxSider
+                { ...( isAuxCollapsed ? {} : {
+                    className: 'permanent-on'
+                } ) }
+                onClose={ closeAux }
+                ref={ auxSliderRef }
+            >
+                <NavMinor />
+            </AuxSider>
+        </>
     );
 };
 NoSider.displayName = 'Site.Body.NoSider';
@@ -182,12 +212,12 @@ const WithSider : React.FC<Props> = ({
                 isCollapsible={ !( isSiderCollapsed ?? isHandheld ) }
                 ref={ siderRef }
             />
-            <NoSider
+            <Main
                 isAuxCollapsed={ isAuxCollapsed }
                 onToggleAux={ onToggleAux }
             >
                 { children }
-            </NoSider>
+            </Main>
             <AuxSider
                 { ...( isAuxCollapsed ? {} : {
                     className: 'permanent-on'

@@ -80,12 +80,10 @@ const Component : React.FC<Props> = props => {
         <SiteTags />
         <NavMinor />
         <DarkModeSetting />
-        { !isNoSiderPage && (
-          <AuxSiderToggleable
-            isOn={ !props.isAuxCollapsed }
-            onToggle={ props.onToggleAux }
-          />
-        ) }
+        <AuxSiderToggleable
+          isOn={ !props.isAuxCollapsed }
+          onToggle={ props.onToggleAux }
+        />
       </div>
     </header>
   );

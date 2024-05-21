@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
+
+import { ValueCtx } from '../../../page-context';
 
 import isHandheldWidth from '../../../util/is-handheld-portrait';
 
@@ -18,7 +20,7 @@ const Layout : React.FC<Props> = ({ children }) => {
   const toggleAuxSwitch = useCallback(() => setCollapsedAuxFlag( f => !f ), []);
   const toggleSiderSwitch = useCallback(() => setCollapsedSiderFlag( f => !f ), []);
   return (
-    <div className="index-layout">
+    <div className={ `index-layout${ useContext( ValueCtx ).isNoSiderPage ? ' no-sider' : '' }` }>
       <SiteHeading
         isAuxCollapsed={ isAuxCollapsed }
         isSiderCollapsed={ isSiderCollapsed }

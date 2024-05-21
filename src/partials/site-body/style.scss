@@ -1,6 +1,11 @@
 :root { --sbsider-bg: var( --background-color-mild ) }
 .dark { --sbsider-bg: var( --background-color ) }
 
+.no-sider .site-body .aux-sider  .nav-minor {
+    background: var( --background-color );
+    border: none;
+}
+
 .site-body {
     display: flex;
     overflow-x: hidden;

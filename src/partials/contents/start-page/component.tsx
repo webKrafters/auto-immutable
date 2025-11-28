@@ -23,7 +23,7 @@ const SHARING_SAMPLE =
 
 const data = sample.connect();
 
-console.log( data.get( 'property.value' ) ); // logs: 44
+console.log( data.get( 'property.value' ) ); // logs: { 'property.value': 44 }
 
 data.set({
     property: {
@@ -31,7 +31,7 @@ data.set({
     }
 });
 
-console.log( data.get( 'property.value' ) ); // logs: 127
+console.log( data.get( 'property.value' ) ); // logs: { 'property.value': 127 }
 
 data.disconnect(); // severs access to the sample AutoImmutable instance`;
 
@@ -40,7 +40,7 @@ const USING_SAMPLE =
 
 const data = sample.connect();
 
-console.log( data.get( 'property.value' ) ); // logs: undefined
+console.log( data.get( 'property.value' ) ); // logs: { 'property.value': undefined }
 
 data.set({
     property: {
@@ -48,7 +48,7 @@ data.set({
     }
 });
 
-console.log( data.get( 'property.value' ) ); // logs: 44
+console.log( data.get( 'property.value' ) ); // logs: { 'property.value': 44 }
 
 data.disconnect(); // severs access to the sample AutoImmutable instance`;
 

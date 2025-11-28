@@ -13,7 +13,13 @@ const TCol : React.FC<{children: React.ReactNode}> = ({ children }) => ( <td cla
 const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `features-history-page ${ className }` }>
         <h1 id="changes">What's Changed?</h1>
-        <table>
+        <table style={{width:'100%'}}>
+            <thead><TRow><th>v2.0.0-rc</th></TRow></thead>
+            <tbody>
+                <TRow><TCol><b>1.</b></TCol><TCol>More detailed change information parameters for <Anchor to="/api/method/set/overview#on-complete"><code>Connection.set</code> onComplete</Anchor> callback.</TCol></TRow>
+            </tbody>
+        </table>
+        <table style={{width:'100%'}}>
             <thead><TRow><th>v0.0.1</th></TRow></thead>
             <tbody>
                 <TRow><TCol><b>1.</b></TCol><TCol>Closable <Anchor to="/api#source"><code>AutoImmutable class</code></Anchor></TCol></TRow>

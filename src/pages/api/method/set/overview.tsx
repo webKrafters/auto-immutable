@@ -52,7 +52,13 @@ consumer.set({
         d: 80
     },
     j: 23
-}, changes => console.log( changes ))
+}, (
+    changes : {},
+    paths : Array<Array<string>>
+) => console.log({
+    changes,
+    paths
+}));
 // updates AutoImmutable instance data to: {
 //    a: {
 //        b: [ { x: 7, y: 73, z: 9 } ],
@@ -101,7 +107,7 @@ const SetOverviewApiPage : React.FC<{className: string}> = ({ className }) => (
         <h1>Set Method Overiew</h1>
         <Paragraph>New updates are merged into AutoImmutable instance data by default.</Paragraph>
         <Paragraph>So only supply the exact changes to be merged <strong><i>{ '(' }i.e. do not spread changing properties into the current properties as is commonly done in pure functional development{ ')' }</i></strong>.</Paragraph>
-        <Paragraph>An optional <strong><code>onUpdateComplete</code></strong> callback may be provided as a second argument.</Paragraph>
+        <Paragraph id="on-complete">An optional <strong><code>onComplete</code></strong> callback may be provided as a second argument. This callback will be invoked immediately following the completion of all update payloads in this <code>set</code> call. Two readonly parameters comprising { '(' }1{ ')' } aggregate applied <code>changes</code> object and { '(' }2{ ')' } an array of <code>paths</code> changed, in a tokenized form, respectively will be provided.</Paragraph>
         <Paragraph>And to overwrite/delete a slice of the AutoImmutable instance data, use any combinations of the <strong><Anchor to="/api/method/set/tags">tag</Anchor></strong> commands.</Paragraph>
         <strong>Example:</strong>
         <CodeBlock>{ BASIC }</CodeBlock>

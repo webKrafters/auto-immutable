@@ -18,7 +18,7 @@ const WithStatus : React.FC<Props> = typeof window === 'undefined'
         ), [ location ]);
         return (
             <div { ...active ? { className: 'active' } : {} }>
-                { children }
+                { children as React.ReactNode }
             </div>
         );
     };

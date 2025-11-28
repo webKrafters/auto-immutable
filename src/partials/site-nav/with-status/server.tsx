@@ -12,7 +12,7 @@ const WithStatus : React.FC<Props> = typeof window !== 'undefined'
         const active = useMemo(() => routePattern.test( href ), [ href, routePattern ]);
         return (
             <div { ...( active ? { className: 'active' } : {} ) }>
-                { children }
+                { children as React.ReactNode }
             </div>
         );
     };

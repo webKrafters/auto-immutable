@@ -70,7 +70,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
             This <code>set(...)</code> method accepts <strong>2</strong> arguments - namely:
             <ol>
                 <li><strong><code>changes</code>:</strong> a single object payload or an array of object payloads containing data nodes to add and/or merge into the AutoImmutable instance data along with operations to perform at specific existing data nodes.</li>
-                <li><strong><code>onComplete</code>:</strong> an optional callback function to be called at the completion of the update operation. This callback is invoked with the <code>changes</code> payload object.</li>
+                <li><strong><code>onComplete</code>:</strong> an optional callback function to be called at the completion of the update operation. This callback is invoked with Two readonly parameters comprising { '(' }1{ ')' } aggregate applied <code>changes</code> object and { '(' }2{ ')' } an array of <code>paths</code> changed, in a tokenized form, respectively will be provided.</li>
             </ol>
             It will create new property pathways into the AutoImmutable instance data for new properties found in <code>changes</code> payload object.
         </Paragraph>

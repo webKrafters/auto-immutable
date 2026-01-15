@@ -14,9 +14,10 @@ const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `features-history-page ${ className }` }>
         <h1 id="changes">What's Changed?</h1>
         <table style={{width:'100%'}}>
-            <thead><TRow><th>v2.0.0-rc</th></TRow></thead>
+            <thead><TRow><th>v2.0.0</th></TRow></thead>
             <tbody>
-                <TRow><TCol><b>1.</b></TCol><TCol>More detailed change information parameters for <Anchor to="/api/method/set/overview#on-complete"><code>Connection.set</code> onComplete</Anchor> callback.</TCol></TRow>
+                <TRow><TCol><b>1.</b></TCol><TCol>Migrated from flat to tree-based data management engine.</TCol></TRow>
+                <TRow><td><b>2.</b></td><td>More detailed change information parameters for <Anchor to="/api/method/set/overview#on-complete"><code>Connection.set</code> onComplete</Anchor> callback.</td></TRow>
             </tbody>
         </table>
         <table style={{width:'100%'}}>

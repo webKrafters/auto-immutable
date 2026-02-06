@@ -71,7 +71,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
             </div>
             <div className="snippet-box">
                 <CodeBlock isInline>
-                    npm install --save auto-immutable
+                    npm install --save @webkrafters/auto-immutable
                 </CodeBlock>
             </div>
         </Paragraph>

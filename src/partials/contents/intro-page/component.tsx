@@ -51,13 +51,14 @@ const IntroPage: React.FC<PageProps> = ({ className }) => {
 				<label>
 					<strong>Main:</strong>
 					<CodeBlock isInline>
-						npm install --save auto-immutable
+						npm install --save @webkrafters/auto-immutable
 					</CodeBlock>
 				</label>
 				<label>
-					<strong>Alternate:</strong>
+					<strong>Defunct:</strong>
+					{/* <strong>Alternate:</strong> */}
 					<CodeBlock isInline>
-						npm install --save @webkrafters/auto-immutable
+						npm install --save auto-immutable
 					</CodeBlock>
 				</label>
 			</Paragraph>

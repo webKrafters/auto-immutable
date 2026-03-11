@@ -68,7 +68,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `start-page${ className ? ` ${ className }` : '' }` }>
         <Paragraph>
             <div className="snippet-intro">
-                Begin by installing <strong><Name /></strong>.
+                Begin by installing <strong><Name /> JS</strong>.
             </div>
             <div className="snippet-box">
                 <CodeBlock isInline>
@@ -78,7 +78,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="instantiate">
-                <h3>Creating an <Name /> instance</h3>
+                <h3>Creating an <Name />Instance</h3>
                 To create an <Name /> instance, simply instantiate the <Name /> class.
             </div>
             <div className="snippet-box">
@@ -88,7 +88,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="use">
-                <h3>Using the <Name /> instance</h3>
+                <h3>Using the <Name /> Instance</h3>
                 Once instantiated, the new instance can be exported and reused.
             </div>
             <div className="snippet-box">
@@ -98,7 +98,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="share">
-                <h3>Sharing the <Name /> instance</h3>
+                <h3>Sharing the <Name /> Instance</h3>
                 Once instantiated, all connections read and write to the same underlying Immutable data.
             </div>
             <div className="snippet-box">

@@ -7,7 +7,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Anchor from '../../anchor';
 import CodeBlock from '../../code-block';
+import License from '../../license-link';
 import ListItem from '../../list-item';
+import Name from '../../name';
 import Paragraph from '../../paragraph';
 
 import './style.scss';
@@ -43,7 +45,7 @@ const IntroPage: React.FC<PageProps> = ({ className }) => {
 			<Paragraph>
 				<label>
 					<strong>Official: </strong>
-					<Anchor to={ npmUrl }>Auto Immutable JS</Anchor>
+					<Anchor to={ npmUrl }><Name /></Anchor>
 				</label>
 			</Paragraph>
 			<Paragraph className="installation">
@@ -65,13 +67,13 @@ const IntroPage: React.FC<PageProps> = ({ className }) => {
 			<Paragraph>
 				<label>
 					<strong>Play with a demo app here on: </strong>
-					<Anchor to={ demoUrl }>Code Sandbox</Anchor>
+					<Anchor to={ demoUrl }>Code Sandbox { '(' }via React Observable Context JS{ ')' }</Anchor>
 				</label>
 			</Paragraph>
 			<Paragraph>
 				<label>
 					<strong>License: </strong>
-					<span>MIT</span>
+					<License />
 				</label>
 			</Paragraph>
 			<Paragraph>

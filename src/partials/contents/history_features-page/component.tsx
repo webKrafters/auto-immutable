@@ -3,6 +3,7 @@ import type { PageProps } from '../../../page-context';
 import React from 'react';
 
 import Anchor from '../../anchor';
+import Name from '../../name';
 
 import './style.scss';
 const TRow : React.FC<{children: React.ReactNode}> = ({ children }) => ( <tr className="vertical-top">{ children }</tr> );
@@ -23,7 +24,7 @@ const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
         <table style={{width:'100%'}}>
             <thead><TRow><th>v0.0.1</th></TRow></thead>
             <tbody>
-                <TRow><TCol><b>1.</b></TCol><TCol>Closable <Anchor to="/api#source"><code>AutoImmutable class</code></Anchor></TCol></TRow>
+                <TRow><TCol><b>1.</b></TCol><TCol>Closable <Anchor to="/api#source"><code><Name /> class</code></Anchor></TCol></TRow>
                 <TRow><td><b>2.</b></td><td><Anchor to="/api#consumer"><code>Reusability</code></Anchor></td></TRow>
                 <TRow><td><b>3.</b></td><td>Developer controlled <Anchor to="/api/method/disconnect"><code>Memory Management</code></Anchor></td></TRow>
                 <TRow><td><b>4.</b></td><td><Anchor to="/api/method/set/overview#batched-update"><code>Batched updates</code></Anchor></td></TRow>

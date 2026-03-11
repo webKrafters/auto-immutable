@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CodeBlock from '../../code-block';
+import Name from '../../name';
 import Paragraph from '../../paragraph';
 
 import './style.scss';
@@ -67,7 +68,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `start-page${ className ? ` ${ className }` : '' }` }>
         <Paragraph>
             <div className="snippet-intro">
-                Begin by installing <strong>AutoImmutable</strong>.
+                Begin by installing <strong><Name /></strong>.
             </div>
             <div className="snippet-box">
                 <CodeBlock isInline>
@@ -77,8 +78,8 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="instantiate">
-                <h3>Creating an AutoImmutable instance</h3>
-                To create an AutoImmutable instance, simply instantiate the AutoImmutable class.
+                <h3>Creating an <Name /> instance</h3>
+                To create an <Name /> instance, simply instantiate the <Name /> class.
             </div>
             <div className="snippet-box">
                 <Header>sample-instance.js</Header>
@@ -87,7 +88,7 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="use">
-                <h3>Using the AutoImmutable instance</h3>
+                <h3>Using the <Name /> instance</h3>
                 Once instantiated, the new instance can be exported and reused.
             </div>
             <div className="snippet-box">
@@ -97,8 +98,8 @@ const StartPage : React.FC<{className? : string}> = ({ className }) => (
         </Paragraph>
         <Paragraph>
             <div className="snippet-intro" id="share">
-                <h3>Sharing the AutoImmutable instance</h3>
-                Once instantiated, all connections read and write to the same underlying AutoImmutable data.
+                <h3>Sharing the <Name /> instance</h3>
+                Once instantiated, all connections read and write to the same underlying Immutable data.
             </div>
             <div className="snippet-box">
                 <Header>user2.js</Header>

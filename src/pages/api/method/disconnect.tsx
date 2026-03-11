@@ -1,9 +1,8 @@
 import React from 'react';
 
 import Anchor from '../../../partials/anchor';
-
 import CodeBlock from '../../../partials/code-block';
-
+import Name from '../../../partials/name';
 import NotePad from '../../../partials/pad/note';
 
 const DISCONNECT_SAMPLE =
@@ -97,14 +96,14 @@ consumers.forEach( c => console.log( c.get( 'a.x' ) ) );
 const DisconnectMethodApiPage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `disconnect-method-api-page ${ className }` }>
         <h1>Disconnecting from Source</h1>
-        <p>Any AutoImmutable instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</p>
-        <p>The Connection's <strong><code>disconnect(...)</code></strong> parameterless method of the <code>Connection</code> instance provides the means for disconnecting itself from its AutoImmutable instance.</p>
-        <p>This method also prompts the source AutoImmutable instance to deallocate all resources dedicated to the disconnecting consumer.</p>
+        <p>Any <Name /> instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</p>
+        <p>The Connection's <strong><code>disconnect(...)</code></strong> parameterless method of the <code>Connection</code> instance provides the means for disconnecting itself from its <Name /> instance.</p>
+        <p>This method also prompts the source <Name /> instance to deallocate all resources dedicated to the disconnecting consumer.</p>
         <CodeBlock>{ DISCONNECT_SAMPLE }</CodeBlock>
         <h2>Further Considerations</h2>
-        <p>This method serves as the final association between a consumer and its source AutoImmutable instance.</p>
-        <p>Once issued, the instant consumer loses accessibility to its source AutoImmutable instance.</p>
-        <NotePad>calling an AutoImmutable <strong><code>close(...)</code></strong> method summarily disconnects all its connected consumers. This instant consumer, if connected to the given AutoImmutable instance, will be disconnected as well.</NotePad>
+        <p>This method serves as the final association between a consumer and its source <Name /> instance.</p>
+        <p>Once issued, the instant consumer loses accessibility to its source <Name /> instance.</p>
+        <NotePad>calling an <Name /> <strong><code>close(...)</code></strong> method summarily disconnects all its connected consumers. This instant consumer, if connected to the given <Name /> instance, will be disconnected as well.</NotePad>
         <CodeBlock>{ SUMMARY_CLOSURE_SAMPLE }</CodeBlock>
     </article>
 );

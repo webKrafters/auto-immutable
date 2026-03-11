@@ -4,6 +4,7 @@ import metadata from '../../../../../gatsby-config/metadata';
 
 import Anchor from '../../../../partials/anchor';
 import CodeBlock from '../../../../partials/code-block';
+import Name from '../../../../partials/name';
 import NotePad from '../../../../partials/pad/note';
 import Paragraph from '../../../../partials/paragraph';
 
@@ -71,12 +72,12 @@ const PropertyPathApiPage : React.FC<{className: string}> = ({ className }) => (
                         The property path <code>a.c.e</code> accesses the <code>e=5</code> property.
                     </Paragraph>
                     <Paragraph>Either of the property paths <code>a.c.f.1</code>, <code>a.c.f.-2</code>, <code>a.c.f[1]</code> and <code>a.c.f[-2]</code> is a valid property path to access the <code>[1]=2</code> property.</Paragraph>
-                    <Paragraph>A special property path, <Anchor to="/api/method/get/property-path#global">@@GLOBAL</Anchor>, may be used to access the AutoImmutable data as a whole.</Paragraph>
+                    <Paragraph>A special property path, <Anchor to="/api/method/get/property-path#global">@@GLOBAL</Anchor>, may be used to access the Immutable data as a whole.</Paragraph>
                 </Paragraph>
             </div>
             <h3 id="global">What is the @@GLOBAL keyword?</h3>
             <div>
-                <strong>@@GLOBAL</strong> is a property path which can be used to obtain a snapshot of the entire AutoImmutable data held within the AutoImmutable instance.<br />
+                <strong>@@GLOBAL</strong> is a property path which can be used to obtain a snapshot of the entire Immutable data held within the <Name /> instance.<br />
             </div>
         </div>
         <div>

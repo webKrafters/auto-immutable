@@ -14,6 +14,7 @@ import RocketFilledIcon from '@ant-design/icons/RocketFilled';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Anchor from '../../anchor';
+import Name from '../../name';
 
 import './style.scss';
 
@@ -54,7 +55,7 @@ const IndexPage: React.FC<PageProps> = ({ className }) => (
     </article>
     <div id="relations" className="index-page-relations">
       <Tile icon={ <AuditOutlinedIcon /> } title="Structure">
-          Auto-Immutable protects values in a running program from random mutations. All attempts to mutate data directly are ignored.
+          <Name /> protects values in a running program from random mutations. All attempts to mutate data directly are ignored.
       </Tile>
       <Tile icon={ <ClusterOutlinedIcon /> } title="Simplicity">
           Simple write-friendly APIs. Simply supply the new write value object and it will be merged into the current immutable data. See <Anchor to="/api/method/set"><code>immutable.set(...)</code></Anchor>.

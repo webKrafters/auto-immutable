@@ -4,6 +4,7 @@ import React from 'react';
 
 import Anchor from '../../../../partials/anchor';
 import CodeBlock from '../../../../partials/code-block';
+import Name from '../../../../partials/name';
 import Paragraph from '../../../../partials/paragraph';
 
 const SAMPLE =
@@ -62,17 +63,17 @@ consumer.set({
 
 const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ className, location }) => (
     <article className={ `set-method-api-page ${ className }` }>
-        <h1>Updating AutoImmutable Data</h1>
-        <Paragraph>Any AutoImmutable instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</Paragraph>
-        <Paragraph>The <code>set(...)</code> method of the <code>Connection</code> instance provides the means of updating AutoImmutable data.</Paragraph>
+        <h1>Updating <Name /> Data</h1>
+        <Paragraph>Any <Name /> instance communicates with its environment through its own <Anchor to="/api#consumer"><code>Connection class</code></Anchor> (the consumer) instances.</Paragraph>
+        <Paragraph>The <code>set(...)</code> method of the <code>Connection</code> instance provides the means of updating Immutable data.</Paragraph>
         <Paragraph>Any attempt to update through any other means is a noop.</Paragraph>
         <Paragraph>
             This <code>set(...)</code> method accepts <strong>2</strong> arguments - namely:
             <ol>
-                <li><strong><code>changes</code>:</strong> a single object payload or an array of object payloads containing data nodes to add and/or merge into the AutoImmutable instance data along with operations to perform at specific existing data nodes.</li>
+                <li><strong><code>changes</code>:</strong> a single object payload or an array of object payloads containing data nodes to add and/or merge into the <Name /> instance data along with operations to perform at specific existing data nodes.</li>
                 <li><strong><code>onComplete</code>:</strong> an optional callback function to be called at the completion of the update operation. This callback is invoked with Two readonly parameters comprising { '(' }1{ ')' } aggregate applied <code>changes</code> object and { '(' }2{ ')' } an array of <code>paths</code> changed, in a tokenized form, respectively will be provided.</li>
             </ol>
-            It will create new property pathways into the AutoImmutable instance data for new properties found in <code>changes</code> payload object.
+            It will create new property pathways into the Immutable data for new properties found in <code>changes</code> payload object.
         </Paragraph>
         <div>
             <h4 id="get-method-example">Example:</h4>
@@ -83,7 +84,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
         </h2>
         <Paragraph>
             <label>
-                Creating, Updating & Deleting AutoImmutable data Properties:
+                Creating, Updating & Deleting Immutable data Properties:
                 <br />
                 <strong>
                     <Anchor to="/api/method/set/overview">
@@ -94,7 +95,7 @@ const SetMethodApiPage : React.FC<PageProps & {className: string}> = ({ classNam
         </Paragraph>
         <Paragraph>
             <label>
-                Updating AutoImmutable Arrays:
+                Updating <Name /> Arrays:
                 <br />
                 <strong>
                     <Anchor to="/api/method/set/overview#indexing">

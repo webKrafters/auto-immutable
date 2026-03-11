@@ -98,7 +98,7 @@ const SetMethodApiSetTagPage : React.FC<PageProps> = ({ className }) => (
         <Paragraph id="purpose">This tag is mainly for handling edge cases.</Paragraph>
         <Paragraph>Please use sparingly. In most cases, calling the consumer.set(...) method with or without any of the other tags is sufficient and most efficient.</Paragraph>
         <Paragraph>This and the '<strong><Anchor to="/api/method/set/tags/replace-usage">@@REPLACE</Anchor></strong>' tag are functionally equivalent when used with a replacement value argument.</Paragraph>
-        <Paragraph>Be aware that the compute function argument may be <code>undefined</code> for properties which do not yet exist in the AutoImmutable data.</Paragraph>
+        <Paragraph>Be aware that the compute function argument may be <code>undefined</code> for properties which do not yet exist in the Immutable data.</Paragraph>
         <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>

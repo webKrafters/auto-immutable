@@ -3,6 +3,7 @@ import type { Props } from '../anchor';
 import React from 'react';
 
 import Anchor from '../anchor';
+import Name from '../name';
 
 import BrowserStatus from './with-status/browser';
 import ServerStatus from './with-status/server';
@@ -36,11 +37,11 @@ const Component : React.FC = () => (
 		<NavLinkIndent1 to="/getting-started#use">Using the Instance</NavLinkIndent1>
 		<NavLinkIndent1 to="/getting-started#share">Sharing the Instance</NavLinkIndent1>
 		<NavLink className="group-link" to="/api">API</NavLink>
-		<NavLinkIndent1 to="/api#source">AutoImmutable Instance</NavLinkIndent1>
-		<NavLinkIndent1 to="/api#consumer">Interacting with Instance</NavLinkIndent1>
-		<NavLinkIndent2 to="/api/method/get">Accessing AutoImmutable Data</NavLinkIndent2>
+		<NavLinkIndent1 to="/api#source"><Name /> Instance</NavLinkIndent1>
+		<NavLinkIndent1 to="/api#consumer">Interacting with the Instance</NavLinkIndent1>
+		<NavLinkIndent2 to="/api/method/get">Accessing <Name /> Data</NavLinkIndent2>
 		<NavLinkIndent3 to="/api/method/get/property-path">Specific Data Items</NavLinkIndent3>
-		<NavLinkIndent2 to="/api/method/set">Updating AutoImmutable Data</NavLinkIndent2>
+		<NavLinkIndent2 to="/api/method/set">Updating <Name /> Data</NavLinkIndent2>
 		<NavLinkIndent3 to="/api/method/set/overview">Detailed Overview</NavLinkIndent3>
 		<NavLinkIndent3 to="/api/method/set/overview#indexing">Working with Arrays</NavLinkIndent3>
 		<NavLinkIndent3 to="/api/method/set/overview#batched-update">Batched Update</NavLinkIndent3>

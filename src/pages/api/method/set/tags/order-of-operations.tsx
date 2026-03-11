@@ -99,7 +99,7 @@ consumer.set([
 const SetMethodApiFullUsagePage : React.FC<{className: string}> = ({ className }) => (
     <article className={ `set-method-api-full-usage-page ${ className }` }>
         <h1>Combination Tags Usage:</h1>
-        <Paragraph>Tags may be used in combination with the default usage where all top-level tag commands' results for a given data property are merged into AutoImmutable data followed by the merging of the rest of the property changes.</Paragraph>
+        <Paragraph>Tags may be used in combination with the default usage where all top-level tag commands' results for a given data property are merged into the existing Immutable data followed by the merging of the rest of the property changes.</Paragraph>
         <Paragraph>Get finer control over update order with the <strong><Anchor to="/api/method/set/tags/order-of-operations#batched-update-example">batched update method</Anchor></strong> illustrated in the next section.</Paragraph>
         <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
